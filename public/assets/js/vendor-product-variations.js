@@ -12,7 +12,14 @@
   const fields=document.createElement('div');fields.className='product-variation-fields';row.append(fields);
   const inputs={};
   for(const [key,title,type,required] of [['size','Size','text',false],['colour','Colour','text',false],['length','Length option (include unit)','text',false],['other','Other option','text',false],['price','Variation price (USD) *','number',true],['stock','Stock quantity *','number',true],['shipping_weight','Shipping weight (kg), optional','number',false],['shipping_length','Package length (cm), optional','number',false],['shipping_width','Package width (cm), optional','number',false],['shipping_height','Package height (cm), optional','number',false]]) {
-   const label=document.createElement('label'); label.className='vendor-field';label.textContent=title;
+   const label=document.createElement('label'); label.className='vendor-field';
+   const unit=title.match(/\((kg|cm|USD)\)/);
+   if(unit){
+    const position=title.indexOf(unit[0]);
+    const strong=document.createElement('strong');strong.style.fontWeight='700';strong.textContent=unit[1];
+    const caption=document.createElement('span');
+    caption.append(title.slice(0,position)+'(',strong,')'+title.slice(position+unit[0].length));label.append(caption);
+   }else label.textContent=title;
    const input=document.createElement('input');input.type=type;input.name=`variations[${n}][${key}]`;input.value=data[key]??'';input.required=required;
    if(type==='number'){input.min=key==='stock'?'0':'0.01';input.step=key==='stock'?'1':'0.01';}else input.maxLength=80;
    if(key.startsWith('shipping_'))input.placeholder='Use main product';

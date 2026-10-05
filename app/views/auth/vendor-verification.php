@@ -5,7 +5,8 @@ $checks = \App\VendorOnboardingService::checks($data);
 $percent = (int)round(count(array_filter($checks, static fn ($c) => $c['done'])) / count($checks) * 100);
 $rejected = $vendor['status'] === 'rejected' || $vendor['kyc_status'] === 'rejected';
 $field = static function (string $name, string $label, string $type = 'text', bool $required = true) use ($values): void {
-    echo '<label>' . e($label) . ($required ? ' *' : ' (optional)');
+    $labelHtml = preg_replace('/\((kg|cm|USD)\)/', '(<strong style="font-weight:700">$1</strong>)', e($label));
+    echo '<label>' . $labelHtml . ($required ? ' *' : ' (optional)');
     if ($type === 'textarea') echo '<textarea name="' . e($name) . '" ' . ($required ? 'required' : '') . '>' . e($values[$name] ?? '') . '</textarea>';
     else echo '<input name="' . e($name) . '" type="' . e($type) . '" value="' . e($values[$name] ?? '') . '" ' . ($required ? 'required' : '') . ($type === 'number' ? ' min="0.01" step="0.01" inputmode="decimal"' : '') . '>';
     echo '</label>';
@@ -74,6 +75,7 @@ $upload = static function (string $name, string $label, bool $required = true) u
  <h2 class="wide" id="verification-product">First product</h2>
  <?php \App\ProductCategoryService::field('product_category_id', $values['product_category_id'] ?? null); ?>
  <?php $field('product_name','Product name'); $upload('product_image','First product photo'); $field('product_regular_price','Product price (USD)','number'); $field('product_sale_price','Discount price (USD)','number',false); $field('product_weight','Packaged weight (kg)','number'); $field('product_length','Package length (cm)','number'); $field('product_width','Package width (cm)','number'); $field('product_height','Package height (cm)','number'); $field('product_description','Product description','textarea'); ?>
+ <p class="wide">Enter packaged weight in <strong>kg</strong> and package length, width and height in <strong>cm</strong>. For example, <strong>500 g = 0.5 kg</strong> and <strong>1,000 g = 1 kg</strong>.</p>
  <p class="wide">Upload a clear photo of your product with no visible contact details. Minimum recommended image size: 1,000 x 1,000 px.</p>
  <h2 class="wide" id="verification-fulfillment">Fulfillment and declaration</h2>
  <label>Fulfillment method *<select name="fulfillment_method" required><option value="">Select method</option><?php foreach (\App\VendorOnboardingService::FULFILLMENT as $option): ?><option <?= ($values['fulfillment_method'] ?? '') === $option ? 'selected' : '' ?>><?= e($option) ?></option><?php endforeach; ?></select></label>

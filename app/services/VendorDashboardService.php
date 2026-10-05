@@ -361,6 +361,7 @@ final class VendorDashboardService
         self::input('Width', 'width', (string)($editProduct['width'] ?? ''), true, 'number', '0.01');
         self::input('Height', 'height', (string)($editProduct['height'] ?? ''), true, 'number', '0.01');
         echo '</div>';
+        echo '<p>Enter packaged weight in <strong>kg</strong> and package dimensions in <strong>cm</strong>. <strong>500 g = 0.5 kg</strong>; <strong>1,000 g = 1 kg</strong>.</p>';
         echo '<label class="vendor-field"><span>Clear background product image</span><input type="file" name="product_image" accept="image/jpeg,image/png,image/webp"' . ($editProduct ? '' : ' required') . '>' . self::imageUploadGuidance('Main Product Image requirements') . '</label>';
         $variationRows = $editProduct ? ProductVariationService::rows((int)$editProduct['id']) : [];
         require APP_ROOT . '/app/views/vendor/product-variations.php';
@@ -2399,7 +2400,14 @@ final class VendorDashboardService
 
     private static function input(string $label, string $name, string $value = '', bool $required = false, string $type = 'text', string $step = ''): void
     {
-        echo '<label class="vendor-field"><span>' . e($label) . '</span><input type="' . e($type) . '" name="' . e($name) . '" value="' . e($value) . '"' . ($required ? ' required' : '') . ($step !== '' ? ' step="' . e($step) . '"' : '') . '></label>';
+        $unit = match ($name) {
+            'weight', 'setup_net_weight', 'setup_package_weight' => 'kg',
+            'length', 'width', 'height' => 'cm',
+            'regular_price', 'sale_price' => 'USD',
+            default => '',
+        };
+        $unitHtml = $unit !== '' ? ' (<strong style="font-weight:700">' . e($unit) . '</strong>)' : '';
+        echo '<label class="vendor-field"><span>' . e($label) . $unitHtml . '</span><input type="' . e($type) . '" name="' . e($name) . '" value="' . e($value) . '"' . ($required ? ' required' : '') . ($step !== '' ? ' step="' . e($step) . '"' : '') . '></label>';
     }
 
     private static function textarea(string $label, string $name, string $value = '', bool $required = false): void
