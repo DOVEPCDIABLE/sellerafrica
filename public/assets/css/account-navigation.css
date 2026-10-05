@@ -1,0 +1,32 @@
+.account-header .dist-header-inner{gap:24px}
+.account-header .account-desktop-nav{gap:22px}
+.account-header .account-register{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 18px;background:#14613b;color:#fff;border-radius:4px;white-space:nowrap;flex-shrink:0}
+.account-header .account-register:hover{background:#0e4d2e}
+.account-header .dist-signin{white-space:nowrap}
+.account-header .account-menu-toggle{display:none}
+.account-mobile-menu{box-sizing:border-box;width:calc(100% - 32px);max-width:420px;max-height:calc(100dvh - 32px);padding:24px;border:1px solid #dfe6e1;border-radius:8px;background:#fff;color:#172922;font-family:Manrope,Arial,sans-serif;overflow:auto;overscroll-behavior:contain}
+.account-mobile-menu::backdrop{background:rgba(9,29,20,.55)}
+.account-menu-heading{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:12px}
+.account-mobile-menu .account-menu-heading h2{font-size:24px;line-height:1.3;margin:0;font-weight:600}
+.account-mobile-menu .account-menu-close,.account-header .account-menu-toggle{box-sizing:border-box;align-items:center;justify-content:center;flex:none;width:44px;height:44px;padding:0;border:1px solid #dfe6e1;border-radius:4px;background:white;color:#174b32;cursor:pointer;font-size:27px;line-height:1}
+.account-mobile-menu .account-menu-close{display:flex}
+.account-mobile-menu nav{display:grid}
+.account-mobile-menu nav a{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:54px;border-bottom:1px solid #e5ebe7;color:#174b32;font-size:14px;font-weight:600;text-decoration:none;overflow-wrap:anywhere}
+.account-mobile-menu .account-menu-signin{display:block;text-align:center;padding:15px;margin-top:24px;border-radius:4px;background:#14613b;color:#fff;text-decoration:none;font-size:14px}
+.account-mobile-menu :focus-visible,.account-header :focus-visible{outline:2px solid #a47d27;outline-offset:3px}
+html.account-menu-open,html.account-menu-open body{overflow:hidden}
+@media(max-width:1100px){
+  .account-header .dist-header-inner,.login-body .account-header .dist-header-inner{height:76px;min-height:0;flex-wrap:nowrap;padding-block:0;gap:14px}
+  .account-header .account-desktop-nav,.login-body .account-header .account-desktop-nav{display:none}
+  .account-header .dist-logo{margin-right:auto;min-width:0}
+  .account-header .account-menu-toggle{display:flex}
+  .distribution-layout>*,.distribution .distribution-fields>*{min-width:0}
+  .distribution input,.distribution select,.distribution textarea{max-width:100%;box-sizing:border-box}
+  .distribution article{overflow-wrap:anywhere}
+}
+@media(max-width:640px){
+  .account-header .dist-signin{display:none}
+  .distribution input,.distribution select,.distribution textarea{font-size:16px}
+  .distribution .distribution-actions{flex-wrap:wrap}
+  .distribution .distribution-actions button{min-height:48px;max-width:100%}
+}

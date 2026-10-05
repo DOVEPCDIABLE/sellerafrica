@@ -1,0 +1,19 @@
+[Unit]
+Description=Authenticated root-terminal gateway
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/btcpay-terminal-venv/bin/python /opt/btcpay-control/terminal-gateway.py
+Restart=on-failure
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/btcpay-control-root
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+CapabilityBoundingSet=
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

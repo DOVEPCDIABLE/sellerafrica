@@ -1,0 +1,2 @@
+Defaults:btcpay-control !requiretty
+btcpay-control ALL=(root) NOPASSWD: /usr/local/sbin/btcpay-control health, /usr/local/sbin/btcpay-control restart, /usr/local/sbin/btcpay-control terminal-open, /usr/local/sbin/btcpay-control terminal-close

@@ -1,0 +1,200 @@
+Options -Indexes
+ServerSignature Off
+ErrorDocument 403 /error?code=403
+ErrorDocument 404 /error?code=404
+
+SetEnvIf Authorization "(.+)" HTTP_AUTHORIZATION=$1
+
+<FilesMatch "(?i)(^\.|composer\.(json|lock)|package(-lock)?\.json|php\.ini|.*\.(sql|log|bak|backup|old|orig|save|zip|tar|tgz|gz|bz2|7z|rar|ini|phar|sh|env))$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    RewriteCond %{HTTP:Authorization} ^(.+)$
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%1]
+
+    RewriteCond %{THE_REQUEST} \s+/(?:.+/)?public/dashboard\.php\?view=([^&\s]+) [NC]
+    RewriteRule ^public/dashboard\.php$ dashboard/%1 [R=302,L,QSD]
+
+    RewriteCond %{THE_REQUEST} \s+/(?:.+/)?public/dashboard\.php[\s?] [NC]
+    RewriteRule ^public/dashboard\.php$ dashboard [R=302,L,QSD]
+
+    RewriteCond %{THE_REQUEST} \s/+public/?[\s?] [NC]
+    RewriteRule ^public/?$ ./ [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/+public/([^\s?]*) [NC]
+    RewriteRule ^public/(.*)$ $1 [R=301,L,NE]
+
+    RewriteRule ^store/?$ / [R=301,L]
+
+    # Stripe's legacy endpoint must reach a handler, not the homepage redirect.
+    RewriteCond %{QUERY_STRING} (^|&)wc-api=wc_stripe(&|$) [NC]
+    RewriteRule ^$ public/api/webhooks/stripe.php [QSA,L]
+    RewriteRule ^stripe-webhook/?$ public/api/webhooks/stripe.php [QSA,L]
+
+    RewriteCond %{REQUEST_URI} ^(.*/)shop/?$ [NC]
+    RewriteRule ^shop/?$ %1marketplace [R=301,L]
+
+    RewriteRule ^dashboard/distributors/?$ public/distributor.php?route=dashboard/distributors [QSA,L]
+    RewriteRule ^dashboard/payment-links/?$ public/admin-payment-links.php [QSA,L]
+    RewriteRule ^dashboard/priority-members/?$ public/priority-members.php [QSA,L]
+    RewriteRule ^dashboard/?$ public/dashboard.php [QSA,L]
+    RewriteRule ^dashboard/([^/]+)/?$ public/dashboard.php?view=$1 [QSA,L]
+    RewriteRule ^error/?$ public/error.php [QSA,L]
+    RewriteRule ^$ public/index.php?route=distributors [QSA,L]
+    RewriteRule ^home/?$ / [R=301,L]
+    RewriteRule ^marketplace/?$ public/index.php?route=marketplace [QSA,L]
+    RewriteRule ^sacfrozen/?$ public/frozen/index.php [QSA,L]
+    RewriteRule ^sacfrozen/vendor/?$ public/frozen/vendor.php [QSA,L]
+    RewriteRule ^sacfrozen/buyer/?$ public/frozen/buyer.php [QSA,L]
+    RewriteRule ^sacfrozen/waitlist/?$ public/frozen/waitlist.php [QSA,L]
+    RewriteRule ^sacfrozen/waitlist-intent/?$ public/frozen/waitlist-intent.php [QSA,L]
+    RewriteRule ^sacfrozen/pricing/?$ public/frozen/pricing.php [QSA,L]
+    RewriteRule ^sacfrozen/vendor-terms/?$ public/frozen/vendor_t\&c.php [QSA,L]
+    RewriteRule ^sacfrozen/user-terms/?$ public/frozen/user_t\&c.php [QSA,L]
+    RewriteRule ^freshroots/?$ public/index.php?route=freshroots [QSA,L]
+    RewriteRule ^freshroots/join/?$ public/index.php?route=freshroots/join [QSA,L]
+    RewriteRule ^freshroots/privacy-policy/?$ public/index.php?route=freshroots/privacy-policy [QSA,L]
+    RewriteRule ^freshroots/terms/?$ public/index.php?route=freshroots/terms [QSA,L]
+    RewriteRule ^freshroots/legal/?$ public/index.php?route=freshroots/legal [QSA,L]
+    RewriteRule ^farm-fresh/?$ public/index.php?route=farm-fresh [QSA,L]
+    RewriteRule ^farm-users/?$ public/index.php?route=farm-users [QSA,L]
+    RewriteRule ^farm-fresh/privacy-policy/?$ public/index.php?route=farm-fresh/privacy-policy [QSA,L]
+    RewriteRule ^farm-fresh/terms/?$ public/index.php?route=farm-fresh/terms [QSA,L]
+    RewriteRule ^farm-fresh/legal/?$ public/index.php?route=farm-fresh/legal [QSA,L]
+    RewriteRule ^farm-privacy-policy/?$ public/index.php?route=farm-privacy-policy [QSA,L]
+    RewriteRule ^farm-terms/?$ public/index.php?route=farm-terms [QSA,L]
+    RewriteRule ^farm-legal/?$ public/index.php?route=farm-legal [QSA,L]
+    RewriteRule ^farms/?$ public/index.php?route=farms [QSA,L]
+    RewriteRule ^farms-near-me/?$ public/index.php?route=farms-near-me [QSA,L]
+    RewriteRule ^visibility-boost/?$ public/index.php?route=visibility-boost [QSA,L]
+    RewriteRule ^manage-store/?$ public/index.php?route=manage-store [QSA,L]
+    RewriteRule ^priority/?$ public/index.php?route=priority [QSA,L]
+    RewriteRule ^setup-store/?$ public/index.php?route=setup-store [QSA,L]
+    RewriteRule ^farmer/register/?$ public/index.php?route=farmer/register [QSA,L]
+    RewriteRule ^farmer/?$ public/index.php?route=farmer [QSA,L]
+    RewriteRule ^farmer/(produce|orders|inventory|fulfillment|earnings|customers|reviews|profile|verification|settings|support)/?$ public/index.php?route=farmer/$1 [QSA,L]
+    RewriteRule ^weaves-and-wigs/?$ public/index.php?route=marketplace&category=weaves-and-wigs [QSA,L]
+    RewriteRule ^food-groceries/?$ public/index.php?route=marketplace&category=food-groceries [QSA,L]
+    RewriteRule ^natural-organic-products/?$ public/index.php?route=marketplace&category=natural-organic-products [QSA,L]
+    RewriteRule ^bestsellers/?$ public/index.php?route=marketplace&category=bestsellers [QSA,L]
+    RewriteRule ^herbs/?$ public/index.php?route=marketplace&category=herbs [QSA,L]
+    RewriteRule ^snacks-ready-to-eat/?$ public/index.php?route=marketplace&category=snacks-ready-to-eat [QSA,L]
+    RewriteRule ^wellness-products/?$ public/index.php?route=marketplace&category=wellness-products [QSA,L]
+    RewriteRule ^books-journals/?$ public/index.php?route=marketplace&category=books-journals [QSA,L]
+    RewriteRule ^shop/?$ public/index.php?route=shop [QSA,L]
+    RewriteRule ^about/?$ public/index.php?route=about [QSA,L]
+    RewriteRule ^contact/?$ public/index.php?route=contact [QSA,L]
+    RewriteRule ^affiliate-registration/?$ public/index.php?route=affiliate-registration [QSA,L]
+    RewriteRule ^become-a-vendor/?$ public/index.php?route=become-a-vendor [QSA,L]
+    RewriteRule ^join-community/?$ public/index.php?route=join-community [QSA,L]
+    RewriteRule ^rewards-program/?$ public/index.php?route=rewards-program [QSA,L]
+    RewriteRule ^distribution-partner/?$ public/index.php?route=distribution-partner [QSA,L]
+    RewriteRule ^(distributors|distributor|distributor/register|dashboard/distributors)/?$ public/distributor-router.php?route=$1 [QSA,L]
+    RewriteRule ^vendor-resources/?$ public/index.php?route=vendor-resources [QSA,L]
+    RewriteRule ^faqs/?$ public/index.php?route=faqs [QSA,L]
+    RewriteRule ^shipping-delivery/?$ public/index.php?route=shipping-delivery [QSA,L]
+    RewriteRule ^returns-refunds/?$ public/index.php?route=returns-refunds [QSA,L]
+    RewriteRule ^customer-support/?$ public/index.php?route=customer-support [QSA,L]
+    RewriteRule ^careers/?$ public/index.php?route=careers [QSA,L]
+    RewriteRule ^blog-news/?$ public/index.php?route=blog-news [QSA,L]
+    RewriteRule ^gallery/?$ public/index.php?route=gallery [QSA,L]
+    RewriteRule ^albums/?$ public/index.php?route=albums [QSA,L]
+    RewriteRule ^vendor-agreement/?$ public/index.php?route=vendor-agreement [QSA,L]
+    RewriteRule ^partner-agreement/?$ public/index.php?route=partner-agreement [QSA,L]
+    RewriteRule ^cookie-policy/?$ public/index.php?route=cookie-policy [QSA,L]
+    RewriteRule ^packages/?$ public/index.php?route=packages [QSA,L]
+    RewriteRule ^knowledge-base/?$ public/index.php?route=knowledge-base [QSA,L]
+    RewriteRule ^track-order/?$ public/index.php?route=track-order [QSA,L]
+    RewriteRule ^privacy-policy/?$ public/index.php?route=privacy-policy [QSA,L]
+    RewriteRule ^terms/?$ public/index.php?route=terms [QSA,L]
+    RewriteRule ^cart/?$ public/index.php?route=storefront/cart [QSA,L]
+    RewriteRule ^checkout/?$ public/index.php?route=storefront/checkout [QSA,L]
+    RewriteRule ^api/cart/add/?$ public/index.php?route=api/cart/add [QSA,L]
+    RewriteRule ^api/payments/manage-store/?$ public/index.php?route=api/payments/manage-store [QSA,L]
+    RewriteRule ^api/farm-fresh/membership/?$ public/index.php?route=api/farm-fresh/membership [QSA,L]
+    RewriteRule ^order-success/?$ public/index.php?route=storefront/order-success [QSA,L]
+    RewriteRule ^order-pdf/?$ public/index.php?route=storefront/order-pdf [QSA,L]
+    RewriteRule ^klasha-pay/?$ public/index.php?route=storefront/klasha-pay [QSA,L]
+    RewriteRule ^product/([a-z0-9-]+)/?$ public/index.php?route=storefront/product&slug=$1 [QSA,L]
+    RewriteRule ^messages/?$ public/chat.php [QSA,L]
+    RewriteRule ^chats/?$ public/chat.php [QSA,L]
+    RewriteRule ^vendor/?$ public/index.php?route=vendor [QSA,L]
+    RewriteRule ^vendor/register/?$ public/index.php?route=vendor/register [QSA,L]
+    RewriteRule ^vendor/chat/?$ public/index.php?route=vendor/chat [QSA,L]
+    RewriteRule ^vendor/messages/?$ public/index.php?route=vendor/chats [QSA,L]
+    RewriteRule ^vendor/chats/?$ public/index.php?route=vendor/chats [QSA,L]
+    RewriteRule ^vendor/product-upload/?$ public/index.php?route=vendor/product-upload [QSA,L]
+    RewriteRule ^vendor/verification/?$ public/vendor/verification.php [QSA,L]
+    RewriteRule ^vendor/(products|inventory|orders|tracking|customers|reviews|payouts|plans|kyc|settings)/?$ public/index.php?route=vendor/$1 [QSA,L]
+    RewriteRule ^affiliate/join/?$ public/affiliate/join.php [QSA,L]
+    RewriteRule ^affiliate/?$ public/affiliate/index.php [QSA,L]
+    RewriteRule ^affiliate/(referrals|commissions|payouts|creatives|settings|profile)/?$ public/affiliate/$1.php [QSA,L]
+    RewriteRule ^chat/?$ public/chat.php [QSA,L]
+    RewriteRule ^rate-seller/?$ public/rate-seller.php [QSA,L]
+    RewriteRule ^verify-email/?$ public/verify-email.php [QSA,L]
+    RewriteRule ^vendors/?$ public/index.php?route=vendors [QSA,L]
+    RewriteRule ^vendors/([a-z0-9-]+)/review/?$ public/index.php?route=vendor-review&slug=$1 [QSA,L]
+    RewriteRule ^vendors/([a-z0-9-]+)/?$ public/index.php?route=vendors&slug=$1 [QSA,L]
+    RewriteRule ^buyer/?$ public/buyer/index.php [QSA,L]
+    RewriteRule ^buyer/register/?$ public/buyer/register.php [QSA,L]
+    RewriteRule ^buyer/messages/?$ public/buyer/chats.php [QSA,L]
+    RewriteRule ^buyer/chats/?$ public/buyer/chats.php [QSA,L]
+    RewriteRule ^buyer/(addresses|orders|profile|wishlist)/?$ public/buyer/$1.php [QSA,L]
+    RewriteRule ^api/storefront/category-products/?$ public/index.php?route=api/storefront/category-products [QSA,L]
+    RewriteRule ^api/register/vendor-account-check/?$ public/api/register/vendor-account-check.php [QSA,L]
+    RewriteRule ^api/mobile(?:/v1)?(?:/(.*))?/?$ public/index.php?route=api/mobile/v1/$1 [QSA,L]
+
+    RewriteRule ^(__MACOSX|app|backup|backups|docs|migrations|storage|web[[:space:]]+version|Archive[[:space:]]+[0-9]+)(/|$) - [F,L,NC]
+
+    RewriteRule (^|/)(backup|backups|dump|dumps|archive|archives)(/|$) - [F,L,NC]
+    RewriteRule \.(sql|log|bak|backup|old|orig|save|zip|tar|tgz|gz|bz2|7z|rar|ini|phar|sh|env)$ - [F,L,NC]
+
+    RewriteCond %{REQUEST_URI} !/public(/|$) [NC]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.+)$ public/$1 [QSA,L]
+</IfModule>
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php8_module>
+   php_value error_log "/home/opusmult/logs/php.error.log"
+   php_flag log_errors On
+   php_flag display_errors Off
+   php_value max_execution_time 30
+   php_value max_input_time 60
+   php_value max_input_vars 1000
+   php_value memory_limit 1024M
+   php_value post_max_size 1024M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php82"
+   php_value upload_max_filesize 1024M
+   php_flag zlib.output_compression Off
+</IfModule>
+<IfModule lsapi_module>
+   php_value error_log "/home/opusmult/logs/php.error.log"
+   php_flag log_errors On
+   php_flag display_errors Off
+   php_value max_execution_time 30
+   php_value max_input_time 60
+   php_value max_input_vars 1000
+   php_value memory_limit 1024M
+   php_value post_max_size 1024M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php82"
+   php_value upload_max_filesize 1024M
+   php_flag zlib.output_compression Off
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php82” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

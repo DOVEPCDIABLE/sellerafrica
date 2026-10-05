@@ -1,0 +1,14 @@
+[Unit]
+Description=Short-lived authenticated root terminal
+
+[Service]
+Type=simple
+RuntimeDirectory=btcpay-control-terminal
+RuntimeDirectoryMode=0700
+ExecStart=/usr/bin/ttyd -i /run/btcpay-control-terminal/ttyd.sock -H X-BTCPay-Owner -W -m 1 -o -w /root/btcpayserver-docker -b /root-terminal -t fontSize=14 /bin/bash --noprofile --norc
+RuntimeMaxSec=300
+TimeoutStopSec=5
+KillMode=control-group
+SendSIGKILL=yes
+Environment=HISTFILE=/dev/null
+UMask=0077

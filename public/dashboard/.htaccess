@@ -1,0 +1,5 @@
+Options -Indexes
+RewriteEngine On
+
+RewriteRule ^$ ../dashboard.php [QSA,L]
+RewriteRule ^([^/]+)/?$ ../dashboard.php?view=$1 [QSA,L]

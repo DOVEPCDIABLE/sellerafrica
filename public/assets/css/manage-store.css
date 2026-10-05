@@ -1,0 +1,43 @@
+.manage-body{--manage-green:#14613b;--manage-ink:#172922;--manage-muted:#647268;--manage-line:#dfe6e1;margin:0;background:#fff;color:var(--manage-ink);font-family:Manrope,Arial,sans-serif;letter-spacing:0}
+.manage-body *{box-sizing:border-box;letter-spacing:0}
+.service-options{border:0;padding:0;margin:24px 0;display:grid;gap:12px;min-width:0}.service-options legend{font-size:12px;font-weight:700;margin-bottom:12px}.service-options label{display:flex;align-items:flex-start;gap:12px;border:1px solid var(--manage-line);padding:14px;border-radius:5px;cursor:pointer}.service-options label:has(input:checked){border-color:var(--manage-green);background:#f0f7f2}.service-options input{width:18px;height:18px;margin:2px 0 0;flex:none;accent-color:var(--manage-green)}.service-options strong{font-size:13px}.service-options small{display:block;margin-top:6px;font-size:12px;line-height:1.6;color:var(--manage-muted)}
+.manage-body a{color:inherit;text-underline-offset:4px}
+.sa-manage-wrap{width:calc(100% - 96px);max-width:1200px;margin:auto}
+.sa-manage-hero{background:linear-gradient(90deg,rgba(5,20,14,.91),rgba(5,20,14,.62) 55%,rgba(5,20,14,.12)),url('../images/distribution-retail-hero.png') center/cover;color:white}
+.sa-manage-grid{padding-block:74px;min-height:490px;display:flex;align-items:center}
+.sa-manage-kicker{font-size:11px;font-weight:800;text-transform:uppercase;margin:0 0 20px;color:var(--manage-green)}
+.sa-manage-hero .sa-manage-kicker{color:#c6dfcc}
+.sa-manage-hero h1{font-size:56px;line-height:1.12;font-weight:500;margin:0;max-width:650px}
+.sa-manage-copy{max-width:590px;font-size:16px;line-height:1.8;color:#e2ebe5;margin:24px 0}
+.sa-manage-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}
+.sa-manage-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 22px;font:700 13px Manrope,Arial,sans-serif;text-decoration:none;border:1px solid transparent;border-radius:4px;cursor:pointer;line-height:1.5;text-align:center}
+.sa-manage-btn.is-primary{background:var(--manage-green);color:white}
+.sa-manage-btn.is-primary:hover{background:#0e4d2e}
+.sa-manage-hero .is-primary,.sa-manage-strip .is-primary{background:#fff;color:#173e2c}
+.sa-manage-btn.is-ghost{background:transparent;color:inherit;border-color:#95a99d}
+.sa-manage-btn:disabled{opacity:.6;cursor:wait}
+.sa-manage-checkout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:100px;padding-block:72px;align-items:start}
+.sa-manage-checkout-intro{padding-top:24px}
+.sa-manage-checkout-intro h2,.sa-manage-section-head h2{font-size:36px;font-weight:500;line-height:1.2;margin:0 0 22px}
+.sa-manage-checkout-intro em{font:italic 500 44px 'Cormorant Garamond',Georgia,serif}
+.sa-manage-checkout-intro p:not(.sa-manage-kicker){font-size:14px;color:var(--manage-muted);line-height:1.8;max-width:430px;margin-bottom:24px}
+.sa-manage-panel{border:1px solid var(--manage-line);border-radius:8px;padding:30px;min-width:0;background:#fff}
+.sa-manage-price{display:flex;gap:10px;align-items:baseline}.sa-manage-price strong{font-size:48px;font-weight:600}.sa-manage-price span{font-size:14px;color:var(--manage-muted)}
+.sa-manage-panel>p:not(.sa-manage-kicker),.sa-manage-plan p{font-size:13px;line-height:1.8;color:var(--manage-muted)}
+.sa-manage-fields{display:grid;gap:18px;margin:24px 0;scroll-margin-top:24px}
+.sa-manage-fields label{display:grid;gap:8px;font-size:12px;font-weight:700}
+.sa-manage-fields input{width:100%;min-width:0;min-height:52px;border:1px solid var(--manage-line);border-radius:4px;padding:12px;font:16px Manrope,Arial,sans-serif;color:var(--manage-ink)}
+.manage-body :focus-visible{outline:2px solid #a47d27;outline-offset:3px}
+.sa-manage-plan{border-top:1px solid var(--manage-line);padding-top:22px}
+.sa-manage-plan h3{font-size:16px;margin:0}.sa-manage-plan .sa-manage-btn{width:100%}
+.sa-manage-status{font-size:13px;line-height:1.7;overflow-wrap:anywhere;margin-top:14px}
+.sa-manage-benefits{background:#f5f8f6;padding-block:64px;border-block:1px solid var(--manage-line)}
+.sa-manage-section-head{display:flex;justify-content:space-between;align-items:start;gap:48px;margin-bottom:32px}
+.sa-manage-section-head p{max-width:440px;margin:0;font-size:14px;line-height:1.8;color:var(--manage-muted)}
+.sa-manage-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.sa-manage-card{border-top:1px solid #ccd9cf;padding-top:22px;min-width:0}
+.sa-manage-card span{color:var(--manage-green);font-size:20px}.sa-manage-card h3{font-size:16px;margin:14px 0 10px}.sa-manage-card p{font-size:13px;line-height:1.8;color:var(--manage-muted);margin:0}
+.sa-manage-strip{padding-block:48px;background:#143d2e;color:white}.sa-manage-strip .sa-manage-wrap{display:flex;align-items:center;justify-content:space-between;gap:32px}.sa-manage-strip h2{font-size:28px;font-weight:500;margin:0}.sa-manage-strip p{font-size:13px;color:#d6e5db;line-height:1.8}
+.manage-notice{max-width:1200px;margin:20px auto;padding:16px 24px;border:1px solid var(--manage-line);background:#f0f7f2;font-size:14px;overflow-wrap:anywhere}
+@media(max-width:900px){.sa-manage-wrap{width:calc(100% - 48px)}.sa-manage-checkout{gap:36px}.sa-manage-panel{padding:24px}.sa-manage-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.sa-manage-section-head{display:block}.sa-manage-hero h1{font-size:46px}}
+@media(max-width:640px){.sa-manage-wrap{width:calc(100% - 40px)}.sa-manage-grid{padding-block:44px;min-height:440px}.sa-manage-hero{background-position:65% center}.sa-manage-hero h1{font-size:38px}.sa-manage-copy{font-size:14px}.sa-manage-actions{gap:12px}.sa-manage-btn{padding-inline:16px}.sa-manage-checkout{grid-template-columns:minmax(0,1fr);gap:28px;padding-block:40px}.sa-manage-checkout-intro{padding-top:0}.sa-manage-checkout-intro h2,.sa-manage-section-head h2{font-size:29px}.sa-manage-checkout-intro em{font-size:35px}.sa-manage-panel{padding:22px}.sa-manage-benefits{padding-block:40px}.sa-manage-cards{grid-template-columns:minmax(0,1fr);gap:24px}.sa-manage-strip .sa-manage-wrap{display:block}.sa-manage-strip h2{font-size:26px}.sa-manage-strip .sa-manage-btn{margin-top:12px}.manage-notice{margin:16px 20px}}

@@ -1,0 +1,66 @@
+/* Visual-only storefront refresh. Existing layout, sizing and breakpoints remain in the page templates. */
+.sa-shop-page .sa-shop,
+.sa-home-page .sa-home {
+  --font-unageo: 'Manrope', Arial, sans-serif;
+  --font-aileron: 'Manrope', Arial, sans-serif;
+  --sa-sans: 'Manrope', Arial, sans-serif;
+  --store-serif: 'Cormorant Garamond', Georgia, serif;
+  --green: #14613b;
+  --green-2: #0d492b;
+  --ink: #172922;
+  --muted: #617168;
+  --neutral-700: #526259;
+  --line: #dfe6e1;
+  --border: #dfe6e1;
+  --mint: #f2f7f3;
+  --surface: #f7f9f7;
+  --soft: #f7f9f7;
+  --radius: 6px;
+  --shadow-sm: 0 2px 8px rgb(23 41 34 / 4%);
+  --shadow-md: 0 5px 16px rgb(23 41 34 / 6%);
+  --shadow-lg: 0 8px 24px rgb(23 41 34 / 8%);
+  --shadow-xl: 0 12px 32px rgb(23 41 34 / 10%);
+  font-family: var(--sa-sans);
+}
+:is(.sa-shop, .sa-home) :is(h1, h2, h3, p, a, button, input, select, textarea, label, span) {
+  letter-spacing: 0;
+}
+.sa-shop .sa-shop-hero__title,
+.sa-shop .sa-shop-title-row :is(h1, h2),
+.sa-shop .sa-shop-signup-strip h2,
+.sa-shop .sa-shop-reviews__head h2,
+.sa-shop .sa-shop-partners__head h2,
+.sa-home h1,
+.sa-home h2 {
+  font-family: var(--store-serif);
+  font-weight: 600;
+}
+.sa-shop .sa-shop-card h3,
+.sa-home .sa-home-product h3 {
+  font-family: var(--sa-sans);
+  font-weight: 700;
+}
+.sa-shop .sa-shop-price strong,
+.sa-home .sa-home-product__price strong { font-weight: 700; }
+.sa-shop .sa-shop-btn,
+.sa-shop .sa-shop-actions button,
+.sa-home .sa-home-btn,
+.sa-home .sa-home-product__actions button {
+  font-family: var(--sa-sans);
+  font-weight: 600;
+  border-radius: 6px;
+}
+.sa-shop .sa-shop-card,
+.sa-home .sa-home-product { border-color: var(--line); border-radius: 8px; box-shadow: var(--shadow-sm); }
+.sa-shop .sa-shop-header-search { border-color: var(--line); border-width: 2px; }
+.sa-shop .sa-shop-header-search button { background: var(--green); color: #fff; font-weight: 600; }
+:is(.sa-shop, .sa-home) :is(input, select, textarea) { font-family: var(--sa-sans); accent-color: var(--green); }
+:is(.sa-shop, .sa-home) :is(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid #14613b;
+  outline-offset: 3px;
+}
+.sa-shop .sa-shop-actions button:hover,
+.sa-home .sa-home-product__actions button:hover { border-color: #0d492b; }
+@media (prefers-reduced-motion: reduce) {
+  :is(.sa-shop, .sa-home) :is(a, button) { transition: none; }
+}

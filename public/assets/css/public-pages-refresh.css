@@ -1,0 +1,91 @@
+/* Distribution identity, scoped to public information and vendor directory pages. */
+body:is(.sa-vendors-page, .sa-about-page, .sa-contact-page) { margin: 0; }
+:is(.sa-vendors, .sa-about, .sa-contact) {
+  --font-unageo: 'Manrope', Arial, sans-serif;
+  --sa-sans: 'Manrope', Arial, sans-serif;
+  --display-font: 'Cormorant Garamond', Georgia, serif;
+  --green: #14613b;
+  --mint: #f2f7f3;
+  --ink: #172922;
+  --muted: #617168;
+  --line: #dfe6e1;
+  --cream: #f5f8f6;
+  --max: 1200px;
+  --gutter: 96px;
+  font-family: var(--sa-sans);
+}
+:is(.sa-vendors, .sa-about, .sa-contact) * { letter-spacing: 0; }
+:is(.sa-vendors, .sa-about, .sa-contact) :is(button, input, textarea, select) { font-family: inherit; }
+:is(.sa-vendors, .sa-about, .sa-contact) :is(h1, h2, h3, p, a) { overflow-wrap: break-word; }
+:is(.sa-vendors, .sa-about, .sa-contact) h1 {
+  font-family: var(--sa-sans);
+  font-size: 52px;
+  line-height: 1.12;
+  font-weight: 600;
+}
+:is(.sa-vendors, .sa-about, .sa-contact) h2 {
+  font-family: var(--display-font);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+:is(.sa-about, .sa-contact) h3 { font-family: var(--sa-sans); font-size: 18px; font-weight: 700; }
+:is(.sa-about, .sa-contact) p { font-size: 15px; line-height: 1.8; }
+:is(.sa-vendors-hero, .sa-about-hero, .sa-contact-hero) { padding-block: 64px; gap: 48px; }
+:is(.sa-vendors-hero, .sa-about-hero, .sa-contact-hero) p { font-size: 16px; line-height: 1.8; }
+:is(.sa-vendors-eyebrow, .sa-about-eyebrow, .sa-contact-eyebrow) { font-size: 11px !important; font-weight: 800; }
+:is(.sa-vendors-section, .sa-about-section, .sa-contact-section) { padding-block: 64px; }
+.sa-vendors-section.is-soft { background: var(--cream); }
+:is(.sa-vendors-nav, .sa-about-nav, .sa-contact-nav) { min-height: 88px; gap: 24px; }
+:is(.sa-vendors-links, .sa-about-links, .sa-contact-links) { gap: 24px; font: 600 13px/1.5 var(--sa-sans); color: #263e31; }
+:is(.sa-vendors-logo, .sa-about-logo, .sa-contact-logo) img { max-width: 148px; max-height: 66px; }
+:is(.sa-vendors-announce, .sa-about-ann, .sa-contact-ann) { font-size: 12px; font-weight: 500; }
+:is(.sa-vendors-announce, .sa-about-ann, .sa-contact-ann) strong { font-weight: 600; }
+:is(.sa-vendors-btn, .sa-about-btn, .sa-contact-btn) {
+  min-height: 48px;
+  height: auto;
+  padding: 13px 20px;
+  border-radius: 4px;
+  font: 600 13px/1.5 var(--sa-sans);
+  text-align: center;
+}
+:is(.sa-vendors-btn, .sa-about-btn, .sa-contact-btn):hover { border-color: #0d492b; }
+:is(.sa-vendors-card, .sa-about-card, .sa-contact-card) { border-radius: 8px; box-shadow: none; border-color: var(--line); }
+.sa-vendors-card h2 { font: 700 18px/1.35 var(--sa-sans); }
+.sa-vendors-section-head h2 { color: var(--ink); }
+.sa-vendors-card p { font-size: 14px; }
+.sa-vendors-link { font-weight: 600; line-height: 1.5; }
+.sa-vendors-meta :is(span, a) { font-weight: 500; font-size: 12px; }
+.sa-vendors-card__banner.is-placeholder { background: #edf3ee; }
+.sa-vendors-card__banner span { box-shadow: none; border-radius: 8px; }
+.sa-vendors-art-card { box-shadow: none; border-radius: 8px; }
+.sa-vendors-art-card.is-stat { background: #143d2e; }
+.sa-vendors-art-card strong { font-size: 48px; font-weight: 600; }
+.sa-about-art, .sa-contact-visual img { border-radius: 8px; box-shadow: none; }
+.sa-about-list li { font-size: 15px; line-height: 1.8; }
+.sa-about-team :is(span, strong) { font-size: 13px; font-weight: 600; }
+.sa-about-cta { background: #143d2e; padding-block: 64px; }
+:is(.sa-about-footer, .sa-contact-footer) { background: #143d2e; font-size: 13px; }
+:is(.sa-about-footer, .sa-contact-footer) h3 { font-size: 16px; }
+:is(.sa-about-footer, .sa-contact-footer) p { font-size: 13px; }
+.sa-contact-form :is(input, textarea) { background: #fff; border-radius: 5px; color: var(--ink); }
+.sa-contact-card a { font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+:is(.sa-vendors, .sa-about, .sa-contact) :is(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid #14613b;
+  outline-offset: 4px;
+}
+@media (max-width: 1100px) {
+  :is(.sa-vendors, .sa-about, .sa-contact) { --gutter: 48px; }
+  :is(.sa-vendors, .sa-about, .sa-contact) h1 { font-size: 44px; }
+  :is(.sa-vendors-actions, .sa-about-actions, .sa-contact-actions) { justify-content: flex-end; }
+}
+@media (max-width: 640px) {
+  :is(.sa-vendors, .sa-about, .sa-contact) { --gutter: 40px; }
+  :is(.sa-vendors, .sa-about, .sa-contact) h1 { font-size: 34px; }
+  :is(.sa-vendors, .sa-about, .sa-contact) h2 { font-size: 32px; }
+  .sa-vendors-card h2 { font-size: 18px; }
+  :is(.sa-vendors-hero, .sa-about-hero, .sa-contact-hero) { padding-block: 40px; gap: 28px; }
+  :is(.sa-vendors-section, .sa-about-section, .sa-contact-section, .sa-about-cta) { padding-block: 40px; }
+  :is(.sa-vendors-nav, .sa-about-nav, .sa-contact-nav) { min-height: 72px; gap: 12px; }
+  :is(.sa-vendors-logo, .sa-about-logo, .sa-contact-logo) img { max-width: 120px; }
+}

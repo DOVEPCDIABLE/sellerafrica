@@ -1,0 +1,51 @@
+# Credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+.user.ini
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+**/key.properties
+**/local.properties
+
+# Dependencies and generated builds
+**/vendor/
+**/node_modules/
+**/build/
+**/.dart_tool/
+**/ephemeral/
+**/.gradle/
+**/Pods/
+**/.symlinks/
+**/__pycache__/
+*.pyc
+
+# Private runtime data, reports, customer uploads and backups
+/storage/
+/public/uploads/
+/public/assets/uploads/
+**/backups/
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.log
+
+# Desktop / IDE metadata
+.DS_Store
+**/__MACOSX/
+.idea/
+*.swp
+*.swo
+
+# Generated web copies, not application source
+*.bp.php
+*.bpp.php

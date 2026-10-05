@@ -1,0 +1,159 @@
+#!/usr/bin/python3
+"""Fixed-command privilege bridge. Never accepts paths, IDs or shell commands."""
+import datetime
+import json
+import hashlib
+import hmac
+import ipaddress
+import os
+import shutil
+import subprocess
+import sys
+import time
+import secrets
+import urllib.request
+
+DOCKER = "/usr/bin/docker"
+UNIT = "btcpay-control-restart.service"
+TERMINAL_UNIT = "btcpay-control-terminal.service"
+TERMINAL_LEASE = "/var/lib/btcpay-control-root/terminal.json"
+os.umask(0o077)
+
+
+def command(args, timeout=3):
+    try:
+        return subprocess.run(args, capture_output=True, text=True, timeout=timeout, check=False)
+    except (subprocess.TimeoutExpired, OSError):
+        return None
+
+
+def properties(unit):
+    result = command(["/usr/bin/systemctl", "show", unit, "--property=ActiveState,Result,ExecMainStatus,ActiveEnterTimestamp,ExecMainStartTimestamp"])
+    return dict(line.split("=", 1) for line in (result.stdout if result else "").splitlines() if "=" in line)
+
+
+def health():
+    disk = shutil.disk_usage("/")
+    version = command([DOCKER, "version", "--format", "{{.Server.Version}}"])
+    ready = bool(version and version.returncode == 0)
+    containers = []
+    checks = []
+    if ready:
+        result = command([DOCKER, "ps", "-a", "--filter", "label=com.docker.compose.project=generated", "--format", "{{.ID}}"])
+        ids = result.stdout.split() if result and result.returncode == 0 else []
+        if ids:
+            result = command([DOCKER, "inspect", *ids])
+            rows = json.loads(result.stdout) if result and result.returncode == 0 else []
+            stats_result = command([DOCKER, "stats", "--no-stream", "--format", "{{json .}}", *ids], timeout=6)
+            stats = {}
+            if stats_result and stats_result.returncode == 0:
+                for line in stats_result.stdout.splitlines():
+                    row = json.loads(line)
+                    stats[row["Name"]] = row
+            for row in rows:
+                name = row["Name"].lstrip("/")
+                state = row.get("State", {})
+                stat = stats.get(name, {})
+                containers.append({"name": name, "state": state.get("Status", "unknown"), "health": state.get("Health", {}).get("Status", "not configured"), "restarts": row.get("RestartCount", 0), "cpu": stat.get("CPUPerc", "unavailable"), "memory": stat.get("MemUsage", "unavailable"), "started_at": state.get("StartedAt", "")})
+                if state.get("OOMKilled"):
+                    checks.append(name + ": killed due to insufficient memory. Check RAM and host pressure.")
+                if state.get("Status") != "running":
+                    checks.append(name + ": not running. Check the restart result; use SSH if it remains stopped.")
+                if state.get("Health", {}).get("Status") == "unhealthy":
+                    checks.append(name + ": container health check is failing. Investigate through SSH.")
+        if not containers:
+            checks.append("No containers found for the configured BTCPay compose project. Inspect the installation through SSH.")
+    else:
+        checks.append("Docker daemon is unavailable. Restarting BTCPay cannot fix a stopped Docker daemon; inspect Docker through SSH.")
+    if disk.free < 5 * 1024**3:
+        checks.append("Low disk space: less than 5 GB free. Review storage before restarting. Do not delete Bitcoin or payment data.")
+    try:
+        request = urllib.request.Request("https://pay.itrade.africa/", method="HEAD")
+        with urllib.request.urlopen(request, timeout=4) as response:
+            endpoint = "HTTPS reachable (HTTP " + str(response.status) + ")"
+    except Exception:
+        endpoint = "HTTPS health check failed"
+        checks.append("pay.itrade.africa is not responding to the HTTPS check. Inspect DNS, TLS, reverse proxy and firewall through SSH; a container restart alone may not fix this.")
+    if not checks:
+        checks.append("All discovered BTCPay containers are running. If the domain is unreachable, check DNS, TLS, firewall and reverse proxy through SSH.")
+    job = properties(UNIT)
+    if not job.get("ExecMainStartTimestamp"):
+        job["Result"] = "Not run yet"
+    return {"ok": True, "checked_at": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"), "docker_ready": ready, "endpoint": endpoint, "summary": str(sum(c["state"] == "running" for c in containers)) + "/" + str(len(containers)) + " running", "disk": {"free_gb": round(disk.free / 1024**3, 1), "used_percent": round(disk.used / disk.total * 100, 1)}, "containers": containers, "job": {"state": job.get("ActiveState", "unknown"), "result": job.get("Result", "unknown"), "exit_code": job.get("ExecMainStatus", "unknown")}, "checks": checks}
+
+
+def restart():
+    # A host-wide lock/cooldown also protects against independent PHP sessions.
+    import fcntl
+    with open("/run/btcpay-control-ops/restart.lock", "a+") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        if properties(UNIT).get("ActiveState") in ("active", "activating", "deactivating"):
+            return {"ok": False}
+        stamp = "/var/lib/btcpay-control-root/restart-at"
+        if os.path.exists(stamp) and time.time() - os.path.getmtime(stamp) < 300:
+            return {"ok": False}
+        result = command(["/usr/bin/systemctl", "start", "--no-block", UNIT])
+        if not result or result.returncode != 0:
+            return {"ok": False}
+        with open(stamp, "w") as target:
+            target.write(str(int(time.time())))
+        return {"ok": True, "queued": True}
+
+
+def terminal_input():
+    raw = sys.stdin.read(4097)
+    if len(raw) > 4096:
+        raise ValueError("Invalid input")
+    return json.loads(raw)
+
+
+def terminal_open():
+    import fcntl
+    data = terminal_input()
+    ip = str(ipaddress.ip_address(data["ip"]))
+    with open("/var/lib/btcpay-control-root/terminal.lock", "a+") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        if os.path.exists(TERMINAL_LEASE):
+            with open(TERMINAL_LEASE) as source:
+                previous = json.load(source)
+            if previous["expires"] > time.time() and properties(TERMINAL_UNIT).get("ActiveState") in ("active", "activating"):
+                return {"ok": False}
+        command(["/usr/bin/systemctl", "stop", TERMINAL_UNIT])
+        token = secrets.token_hex(32)
+        expires = int(time.time()) + 300
+        lease = {"token_hash": hashlib.sha256(token.encode()).hexdigest(), "ip": ip, "expires": expires, "bootstrapped": False}
+        with open(TERMINAL_LEASE, "w") as target:
+            json.dump(lease, target)
+        os.chmod(TERMINAL_LEASE, 0o600)
+        result = command(["/usr/bin/systemctl", "start", TERMINAL_UNIT])
+        if not result or result.returncode != 0:
+            os.unlink(TERMINAL_LEASE)
+            return {"ok": False}
+        return {"ok": True, "token": token, "expires": expires}
+
+
+def terminal_close():
+    import fcntl
+    data = terminal_input()
+    with open("/var/lib/btcpay-control-root/terminal.lock", "a+") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        if not os.path.exists(TERMINAL_LEASE):
+            return {"ok": True}
+        with open(TERMINAL_LEASE) as source:
+            lease = json.load(source)
+        if not hmac.compare_digest(lease["token_hash"], hashlib.sha256(str(data.get("token", "")).encode()).hexdigest()):
+            return {"ok": False}
+        os.unlink(TERMINAL_LEASE)
+        command(["/usr/bin/systemctl", "stop", TERMINAL_UNIT], timeout=8)
+        return {"ok": True}
+
+
+if os.geteuid() != 0 or len(sys.argv) != 2 or sys.argv[1] not in ("health", "restart", "terminal-open", "terminal-close"):
+    print(json.dumps({"ok": False}))
+    sys.exit(1)
+try:
+    actions = {"health": health, "restart": restart, "terminal-open": terminal_open, "terminal-close": terminal_close}
+    print(json.dumps(actions[sys.argv[1]]()))
+except Exception:
+    print(json.dumps({"ok": False}))
+    sys.exit(1)

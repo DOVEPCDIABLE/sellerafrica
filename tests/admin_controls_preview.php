@@ -1,0 +1,10 @@
+<?php
+namespace App {class AuthService {static function hasRole($role){return ($GLOBALS['argv'][1]??'')!=='restricted';}}}
+namespace {
+if(PHP_SAPI!=='cli')exit(1);
+function e($s){return htmlspecialchars((string)$s,ENT_QUOTES,'UTF-8');}function app_url($s){return '/'.$s;}function getCsrfToken(){return 'test-token';}
+$editVendor=['owner_email'=>'vendor@example.com','display_name'=>'Vendor Name','store_name'=>'Example Store','user_id'=>42];
+echo '<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body class="admin-layout"><main class="admin-main"><div class="content"><section class="panel"><div class="panel-header"><h2>Edit Vendor</h2></div>';
+require __DIR__.'/../app/views/admin/vendor-payment-links.php';
+echo '<form class="settings-form"><div class="settings-form-grid"><label class="settings-field"><span>Store name</span><input required value="Example Store"></label><label class="settings-field"><span>Email</span><input type="email" value="vendor@example.com"></label><label class="settings-field"><span>Status</span><select><option>Pending verification</option></select></label><label class="settings-field"><span>Store banner</span><input type="file"></label><label class="settings-field span-2"><span>Description</span><textarea>Store information</textarea></label><label class="settings-field"><span>Notifications</span><input type="checkbox" checked></label><label class="settings-field"><span>Selected plan</span><input type="radio" checked></label><label class="settings-field"><span>Invalid field</span><input aria-invalid="true" value="Needs correction"></label><label class="settings-field"><span>Disabled field</span><input disabled value="Not editable"></label></div><div class="form-actions"><button class="btn primary">Save vendor</button><button class="btn secondary">Cancel</button><button class="btn danger">Reject vendor</button><button class="btn primary" disabled>Processing...</button></div></form></section></div></main></body></html>';
+}

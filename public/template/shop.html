@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Rosun - Grocery Store Ecommerce HTML5 Template </title>
+
+   <link rel="icon" type="image/x-icon" href="https://template.moontelict.com/rosun/assets/img/logo/favicon.png">
+
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/animate.css">
+   <link rel="stylesheet" href="assets/css/fontawesome-pro.min.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/swiper-min.css">
+   <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+
+
+   <!-- scroll to top  -->
+   <button id="back-to-top"><i class="far fa-arrow-up"></i></button>
+
+   <!-- preloader  -->
+   <div id="loading">
+      <div id="loading-center">
+         <div id="loading-center-absolute">
+            <div class="object" id="object_four"></div>
+            <div class="object" id="object_three"></div>
+            <div class="object" id="object_two"></div>
+            <div class="object" id="object_one"></div>
+         </div>
+      </div>
+   </div>
+
+   <!-- Offcanvas -->
+   <div class="mt-offcanvas">
+      <div class="mt-offcanvas-wrapper">
+         <div class="mt-offcanvas-header d-flex justify-content-between align-items-center mb-40">
+            <div class="mt-offcanvas-logo">
+               <a href="https://template.moontelict.com/rosun/index.html"><img src="assets/img/logo/black-logo.png" alt=""></a>
+            </div>
+            <div class="mt-offcanvas-close">
+               <button class="mt-offcanvas-close-toggle"><i class="fal fa-times"></i></button>
+            </div>
+         </div>
+         <div class="mtheader__bottom-bar-wrap offcanvas-cate mb-40">
+            <div class="mtheader__bottom-bar d-flex align-items-center justify-content-between">
+               <div class="mtcategories-bar">
+                  <i class="fa-regular fa-bars"></i>
+                  <span>All Categories</span>
+               </div>
+               <div class="mtcategories-icon">
+                  <i class="fa-regular fa-angle-down"></i>
+               </div>
+            </div>
+
+            <div id="mtheader__bottom-category-offcanvas" class="mtheader__bottom-category-offcanvas ">
+               <nav>
+                  <ul>
+                     <li>
+                        <a href="shop.html"><img src="assets/img/category/cat-menu-1-1.png"
+                              alt=""><span>Vegetables</span></a>
+                     </li>
+                     <li>
+                        <a href="shop.html"><img src="assets/img/category/cat-menu-1-2.png" alt=""><span>Soft
+                              Drinks</span></a>
+                     </li>
+                     <li>
+                        <a href="shop.html"><img src="assets/img/category/cat-menu-1-3.png" alt=""><span>Fresh
+                              Fruits</span></a>
+                     </li>
+                     <li>
+                        <a href="shop.html"><img src="assets/img/category/cat-menu-1-4.png" alt=""><span>Meat
+                              &
+                              Fish</span></a>
+                     </li>
+                     <li>
+                        <a href="shop.html"><img src="assets/img/category/cat-menu-1-5.png" alt=""><span>Milk
+                              &
+                              Cream</span></a>
+                     </li>
+                     <li>
+                        <a href="shop.html"><img src="assets/img/category/cat-menu-1-6.png" alt=""><span>Frozen
+                              Foods</span></a>
+                     </li>
+                     <li>
+                        <a href="shop.html"><img src="assets/img/category/cat-menu-1-7.png" alt=""><span>Dairy
+                              Products</span></a>
+                     </li>
+                     <li>
+                        <a href="shop.html"><img src="assets/img/category/cat-menu-1-8.png" alt=""><span>Bottled
+                              Water</span></a>
+                     </li>
+                  </ul>
+                  <a href="shop.html" class="mtheader__bottom-category-btn">View
+                     All <i class="fa-light fa-angle-right"></i></a>
+               </nav>
+
+            </div>
+
+         </div>
+         <div class="mt-offcanvas-menu d-xl-none mb-50">
+            <nav></nav>
+         </div>
+         <div class="mt-offcanvas-content mb-50 d-none d-xl-block">
+            <h2 class="mt-offcanvas-title">Hello There!</h2>
+            <p>Lorem ipsum dolor sit amet, consect etur adipiscing elit. </p>
+         </div>
+         <div class="mt-offcanvas-info mb-50"></div>
+         <div class="mt-offcanvas-social mb-50">
+            <h3 class="mt-offcanvas-sm-title">Follow Us</h3>
+            <a href="shop.html#"><i class="fab fa-facebook-f"></i></a>
+            <a href="shop.html#"><i class="fab fa-twitter"></i></a>
+            <a href="shop.html#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="shop.html#"><i class="fab fa-instagram"></i></a>
+         </div>
+      </div>
+   </div>
+   <!-- mt-offcanvas-overlay -->
+   <div class="mt-offcanvas-overlay"></div>
+
+   <!-- Cart mini star -->
+   <div class="mtcartmini__area">
+      <div class="mtcartmini__wrapper d-flex justify-content-between flex-column">
+         <div class="mtcartmini__top-wrapper">
+            <div class="mtcartmini__top p-relative">
+               <div class="mtcartmini__top-title">
+                  <h4>Shopping cart</h4>
+               </div>
+               <div class="mtcartmini__close">
+                  <button type="button" class="mtcartmini__close-btn mtcartmini-close-btn"><i
+                        class="fal fa-times"></i></button>
+               </div>
+            </div>
+            <div class="mtcartmini__shipping">
+               <p>Free shipping on your first order from our U.S. warehouse</p>
+               <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                     data-width="70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+                  </div>
+               </div>
+            </div>
+            <div class="mtcartmini__widget">
+               <div class="mtcartmini__widget-item">
+                  <div class="mtcartmini__thumb">
+                     <a href="https://template.moontelict.com/rosun/product.html">
+                        <img src="assets/img/product/feature-1-10.png" alt="">
+                     </a>
+                  </div>
+                  <div class="mtcartmini__content">
+                     <h5 class="mtcartmini__title"><a href="https://template.moontelict.com/rosun/product.html">Best Masoori dry <br> indian Rice</a></h5>
+                     <div class="mtcartmini__prmte-wrapper">
+                        <span class="mtcartmini__prmte">$16.00</span>
+                        <span class="mtcartmini__quantity">x3</span>
+                     </div>
+                  </div>
+                  <a href="shop.html#" class="mtcartmini__del"><i class="fa-regular fa-xmark"></i></a>
+               </div>
+               <div class="mtcartmini__widget-item">
+                  <div class="mtcartmini__thumb">
+                     <a href="https://template.moontelict.com/rosun/product.html">
+                        <img src="assets/img/product/feature-1-13.png" alt="">
+                     </a>
+                  </div>
+                  <div class="mtcartmini__content">
+                     <h5 class="mtcartmini__title"><a href="https://template.moontelict.com/rosun/product.html">White Pumpkin - Each <br> (appr 1.5 LB-2
+                           LB)</a>
+                     </h5>
+                     <div class="mtcartmini__prmte-wrapper">
+                        <span class="mtcartmini__prmte">$20.00</span>
+                        <span class="mtcartmini__quantity">x3</span>
+                     </div>
+                  </div>
+                  <a href="shop.html#" class="mtcartmini__del"><i class="fa-regular fa-xmark"></i></a>
+               </div>
+            </div>
+            <!-- for wp -->
+         </div>
+         <div class="mtcartmini__checkout">
+            <div class="mtcartmini__checkout-title mb-30">
+               <h4>Subtotal:</h4>
+               <span>$213.00</span>
+            </div>
+            <div class="mtcartmini__checkout-btn text-center">
+               <a href="https://template.moontelict.com/rosun/cart.html" class="mt-btn mb-10 w-100"> view cart</a>
+               <a href="https://template.moontelict.com/rosun/checkout.html" class="mt-btn-3 w-100"> checkout</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Cart mini end -->
+
+   <header class="mtheader__area p-relative">
+      <!-- header top area start -->
+      <div class="mtheader__top-area mtheader__top-2 theme-bg p-relative d-none d-lg-block">
+         <div class="container">
+            <div class="mtborder__top-wrapper d-flex align-items-center justify-content-between">
+               <div class="mtheader__top-left"></div>
+               <div class="mtheader__top-right d-flex align-items-center justify-content-between">
+                  <div class="mtheader__top-social">
+                     <a href="shop.html#"><i class="fa-brands fa-pinterest-p"></i></a>
+                     <a href="shop.html#"><i class="fa-brands fa-instagram"></i></a>
+                     <a href="shop.html#"><i class="fa-brands fa-facebook-f"></i></a>
+                  </div>
+                  <span>
+                     <i class="fa-solid fa-star-sharp"></i>
+                  </span>
+                  <div class="mtheader__top-lang">
+                     <select>
+                        <option value="1">Eng</option>
+                        <option value="fr">French</option>
+                        <option value="es">Spanish</option>
+                        <option value="pt">Portuguese</option>
+                     </select>
+                  </div>
+                  <span>
+                     <i class="fa-solid fa-star-sharp"></i>
+                  </span>
+                  <div class="mtheader__top-currency">
+                     <select>
+                        <option value="1">USD</option>
+                        <option value="2">URO</option>
+                        <option value="3">BDT</option>
+                        <option value="3">RCS</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- header Menu area start -->
+      <div id="mt-header-sticky" class="mtheader__bottom-area mtheader__bottom-2 mt-sticky-theme-2 p-relative">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-lg-2 col-6">
+                  <div class="mtheader__bottom-category-wrap p-relative">
+                     <div class="mtheader__bottom-category">
+                        <div class="mtheader__logo">
+                           <a href="https://template.moontelict.com/rosun/index.html"><img src="assets/img/logo/black-logo.png" alt="Rosun"></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-10 col-6">
+                  <div
+                     class="mtheader__bottom-wrapper p-relative d-flex align-items-center justify-content-end justify-content-xl-between">
+                     <div class="mtheader__bottom-menu d-none d-xl-block">
+                        <nav class="mt-mobile-menu-active">
+                           <ul>
+                              <li class="has-dropdown">
+                                 <a href="https://template.moontelict.com/rosun/index.html">Home</a>
+                                 <ul class="sub-menu mt-submenu">
+                                    <li><a href="https://template.moontelict.com/rosun/index.html">Home One</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/index-2.html">Home Two</a>
+                                    </li>
+
+                                 </ul>
+                              </li>
+                              <li><a href="https://template.moontelict.com/rosun/about.html">About</a>
+                              <li class="has-dropdown"><a href="shop.html#">Shop</a>
+                                 <ul class="sub-menu mt-submenu">
+                                    <li><a href="shop.html">Shop</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/product-details.html">Prodcut Details</a></li>
+
+                                 </ul>
+                              </li>
+                              <li class="has-dropdown"><a href="shop.html#">Pages</a>
+                                 <ul class="sub-menu mt-submenu">
+                                    <li><a href="https://template.moontelict.com/rosun/about.html">About</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/contact.html">Contact</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/faq.html">Faq</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/team.html">Team</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/team-details.html">Team Details</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/product-details.html">Prodcut</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/wishlist.html">Wishlist</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/checkout.html">Checkout</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/cart.html">Cart</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/login.html">Login</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/register.html">Register</a></li>
+                                 </ul>
+                              </li>
+
+                              <li class="has-dropdown"><a href="shop.html#">Blog</a>
+                                 <ul class="sub-menu mt-submenu">
+                                    <li><a href="https://template.moontelict.com/rosun/blog.html">Blog</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/blog-grid.html">Blog Grid</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/blog-details.html">Blog Details</a></li>
+                                 </ul>
+                              </li>
+
+                              <li><a href="https://template.moontelict.com/rosun/contact.html">Contact</a>
+                              </li>
+                           </ul>
+                        </nav>
+                     </div>
+                     <div
+                        class="mtheader__midel-account-wrap p-relative d-flex align-items-center justify-content-between">
+                        <div class="mtheader__midel-wishlist d-none d-lg-block">
+                           <a href="https://template.moontelict.com/rosun/wishlist.html"><i class="fa-regular fa-heart"></i></a>
+                        </div>
+                        <span class="d-none d-lg-block">
+                           <i class="fa-solid fa-star-sharp"></i>
+                        </span>
+                        <div class="mtheader__midel-login mtheader__mobile-cart">
+                           <a href="https://template.moontelict.com/rosun/login.html" class="mt__header-login-another-page">
+                              <i class="fa-solid fa-user-plus"></i>
+                              <span>Login your</span>
+                              <h6>Account</h6>
+                           </a>
+                        </div>
+                        <span>
+                           <i class="fa-solid fa-star-sharp"></i>
+                        </span>
+                        <div class="mtheader__midel-login mtheader__mobile-cart">
+                           <div class="mtcartmini-open-btn">
+                              <div class="mtheader__midel-card-value">
+                                 <i class="fa-solid fa-basket-shopping"></i>
+                                 <p>2</p>
+                                 <span>Cart Items</span>
+                                 <h6>$570.00</h6>
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+                     <div class="mt-header-toogle  d-xl-none text-end">
+                        <button class="mt-offcanvas-toogle mt-offcanvas-toogle-2"><i
+                              class="fa-regular fa-bars-staggered"></i></button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </header>
+
+   <main>
+
+   
+
+      <!-- Start Shop Area -->
+      <section class="mtshop__area pt-120 pb-120 p-relative">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-4">
+                  <div class="mt-shop-sidebar mr-10">
+                     <!-- categories -->
+                     <div class="mt-shop-widget mb-50">
+                        <h3 class="mt-shop-widget-title mb-20">Shop By Categories</h3>
+                        <div class="mt-shop-widget-content">
+                           <div class="mt-shop-widget-categories">
+                              <ul>
+                                 <li><a href="shop.html"><img src="assets/img/category/cat-menu-1-1.png" alt="">Fresh
+                                       Produce
+                                       <span><i class="fa-light fa-angle-right"></i></span></a></li>
+                                 <li><a href="shop.html"><img src="assets/img/category/cat-menu-1-2.png" alt="">Dairy &
+                                       Eggs
+                                       <span><i class="fa-light fa-angle-right"></i></span></a></li>
+                                 <li><a href="shop.html"><img src="assets/img/category/cat-menu-1-3.png" alt="">Meat &
+                                       Seafood<span><i class="fa-light fa-angle-right"></i></span></a></li>
+                                 <li><a href="shop.html"><img src="assets/img/category/cat-menu-1-4.png" alt="">Bakery &
+                                       Bread
+                                       <span><i class="fa-light fa-angle-right"></i></span></a></li>
+                                 <li><a href="shop.html"><img src="assets/img/category/cat-menu-1-5.png" alt="">Pantry
+                                       Staples
+                                       <span><i class="fa-light fa-angle-right"></i></span></a></li>
+                                 <li><a href="shop.html"><img src="assets/img/category/cat-menu-1-6.png" alt="">Frozen
+                                       Foods
+                                       <span><i class="fa-light fa-angle-right"></i></span></a></li>
+                                 <li><a href="shop.html"><img src="assets/img/category/cat-menu-1-7.png"
+                                          alt="">Beverages
+                                       <span><i class="fa-light fa-angle-right"></i></span></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- filter -->
+                     <div class="mt-shop-widget mb-50">
+                        <h3 class="mt-shop-widget-title no-border">Filter by Price</h3>
+
+                        <div class="mt-shop-widget-content">
+                           <div class="mt-shop-widget-filter">
+                              <div id="slider-range" class="mb-10"></div>
+                              <div class="mt-shop-widget-filter-info d-flex align-items-center justify-content-between">
+                                 <span class="input-range">
+                                    <input type="text" id="amount" readonly>
+                                 </span>
+                                 <button class="mt-shop-widget-filter-btn" type="button">Filter</button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- categories -->
+                     <div class="mt-shop-widget mb-50">
+                        <h3 class="mt-shop-widget-title mb-20">Shop By Brands</h3>
+                        <div class="mt-shop-widget-content">
+                           <div class="mt-shop-widget-brands">
+                              <form action="shop.html#">
+                                 <div class="form-check mt-shop-widget-brands-item mb-10">
+                                    <input class="form-check-input" type="checkbox" value="" id="ecoMart">
+                                    <label class="form-check-label" for="ecoMart">
+                                       EcoMart <span> - (125)</span>
+                                    </label>
+                                 </div>
+                                 <div class="form-check mt-shop-widget-brands-item mb-10">
+                                    <input class="form-check-input" type="checkbox" value="" id="vosonia">
+                                    <label class="form-check-label" for="vosonia">
+                                       Vosonia <span>- (45)</span>
+                                    </label>
+                                 </div>
+                                 <div class="form-check mt-shop-widget-brands-item mb-10">
+                                    <input class="form-check-input" type="checkbox" value="" id="freshyUp">
+                                    <label class="form-check-label" for="freshyUp">
+                                       FreshyUp <span>- (40)</span>
+                                    </label>
+                                 </div>
+                                 <div class="form-check mt-shop-widget-brands-item mb-10">
+                                    <input class="form-check-input" type="checkbox" value="" id="closery">
+                                    <label class="form-check-label" for="closery">
+                                       Closery <span>- (50)</span>
+                                    </label>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- product rating -->
+                     <div class="mt-shop-widget mb-50">
+                        <h3 class="mt-shop-widget-title mb-20">Shop By Rating</h3>
+                        <div class="mt-shop-widget-content">
+                           <div class="mt-shop-widget-rating">
+                              <form action="shop.html#">
+                                 <div class="form-check mt-shop-widget-rating-item mb-10">
+                                    <input class="form-check-input" type="checkbox" value="" id="rating5">
+                                    <label class="form-check-label" for="rating5">
+                                       <i class="fa-sharp fa-solid fa-star"></i>
+                                       <i class="fa-sharp fa-solid fa-star"></i>
+                                       <i class="fa-sharp fa-solid fa-star"></i>
+                                       <i class="fa-sharp fa-solid fa-star"></i>
+                                       <i class="fa-sharp fa-solid fa-star"></i>
+                                       <span> 5</span>
+                                    </label>
+                                 </div>
+                                 <div class="form-check mt-shop-widget-rating-item mb-10">
+                                    <input class="form-check-input" type="checkbox" value="" id="rating4">
+                                    <label class="form-check-label" for="rating4">
+                                       <i class="fa-sharp fa-solid fa-star"></i>
+                                       <i class="fa-sharp fa-solid fa-star"></i>
+                                       <i class="fa-sharp fa-solid fa-star"></i>
+                                       <i class="fa-sharp fa-solid fa-star"></i>
+                                       <i class="fa-light fa-star"></i>
+                                       <span> 4</span>
+                                    </label>
+                                 </div>
+                                 <div class="form-check mt-shop-widget-rating-item mb-10">
+                                    <input class="form-check-input" type="checkbox" value="" id="rating3">
+                                    <label class="form-check-label" for="rating3">
+                                       <i class="fa-sharp fa-solid fa-star"></i>
+                                       <i class="fa-sharp fa-solid fa-star"></i>
+                                       <i class="fa-sharp fa-solid fa-star"></i>
+                                       <i class="fa-light fa-star"></i>
+                                       <i class="fa-light fa-star"></i>
+                                       <span> 3</span>
+                                    </label>
+                                 </div>
+                                 <div class="form-check mt-shop-widget-rating-item mb-10">
+                                    <input class="form-check-input" type="checkbox" value="" id="rating2">
+                                    <label class="form-check-label" for="rating2">
+                                       <i class="fa-sharp fa-solid fa-star"></i>
+                                       <i class="fa-sharp fa-solid fa-star"></i>
+                                       <i class="fa-light fa-star"></i>
+                                       <i class="fa-light fa-star"></i>
+                                       <i class="fa-light fa-star"></i>
+                                       <span> 2</span>
+                                    </label>
+                                 </div>
+                                 <div class="form-check mt-shop-widget-rating-item mb-10">
+                                    <input class="form-check-input" type="checkbox" value="" id="rating1">
+                                    <label class="form-check-label" for="rating1">
+                                       <i class="fa-sharp fa-solid fa-star"></i>
+                                       <i class="fa-light fa-star"></i>
+                                       <i class="fa-light fa-star"></i>
+                                       <i class="fa-light fa-star"></i>
+                                       <i class="fa-light fa-star"></i>
+                                       <span> 1</span>
+                                    </label>
+                                 </div>
+
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- product  -->
+                     <div class="mt-shop-widget mb-50">
+                        <div class="mt-shop-widget-content">
+                           <div class="mtfeature__product-item p-relative fix">
+                              <div class="mtfeature__product-shape">
+                                 <img src="assets/img/product/feature-shape-1.png" alt="">
+                              </div>
+                              <div class="mtfeature__product-offer">
+                                 <span>70% OFF</span>
+                              </div>
+                              <div class="mtfeature__product-img mb-15">
+                                 <a href="https://template.moontelict.com/rosun/product-details.html">
+                                    <img src="assets/img/product/feature-1-1.jpg" alt="Rosun">
+                                 </a>
+                              </div>
+                              <div class="mt-shop-widget-countdown mb-15" data-countdown=""
+                                 data-date="Nov 19 2025 20:20:22">
+                                 <div class="countdown d-flex align-items-center justify-content-around">
+                                    <div class="mt-shop-widget-countdown-item">
+                                       <span data-days="" class="countdown-value">218</span>
+                                       <span class="countdown-label">DAYS</span>
+                                    </div>
+                                    <div class="countdown-separator">:</div>
+                                    <div class="mt-shop-widget-countdown-item">
+                                       <span data-hours="" class=" countdown-value">6</span>
+                                       <span class="countdown-label">Hours</span>
+                                    </div>
+                                    <div class="countdown-separator">:</div>
+                                    <div class="mt-shop-widget-countdown-item">
+                                       <span data-minutes="" class="minutes countdown-value">15</span>
+                                       <span class="countdown-label">Mins</span>
+                                    </div>
+                                    <div class="countdown-separator">:</div>
+                                    <div class="mt-shop-widget-countdown-item">
+                                       <span data-seconds="" class="seconds countdown-value">31</span>
+                                       <span class="countdown-label">Secs</span>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="mtfeature__product-price mtfeature__product-price-3 mb-15">
+                                 <span>$29.00</span>
+                                 <del>$62.00</del>
+                              </div>
+                              <div class="mtfeature__product-content mb-15">
+                                 <h5 class="mtfeature__product-title">
+                                    <a href="https://template.moontelict.com/rosun/product-details.html">
+                                       Seeds of Change Organic Watermelon</a>
+                                 </h5>
+                              </div>
+                              <div class="mtfeature__product-rating mb-15">
+                                 <a href="shop.html#"><i class="fa-solid fa-star-sharp"></i></a>
+                                 <a href="shop.html#"><i class="fa-solid fa-star-sharp"></i></a>
+                                 <a href="shop.html#"><i class="fa-solid fa-star-sharp"></i></a>
+                                 <a href="shop.html#"><i class="fa-solid fa-star-sharp"></i></a>
+                                 <a href="shop.html#"><i class="fa-solid fa-star-sharp"></i></a>
+                              </div>
+
+                              <div class="mtfeature__product-btn">
+                                 <a href="https://template.moontelict.com/rosun/cart.html" class="mt-btn-3">Add To Cart</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-9 col-lg-8">
+                  <div class="mt-shop-wrapper">
+                     <div class="mt-shop-top-filtar mb-20">
+                        <a href="#" data-shop-clear-filters><i class="fa-light fa-filter-circle-xmark"></i> Clear Filters</a>
+                        <a href="shop.html"><i class="fa-light fa-grid-2"></i> All Products</a>
+                     </div>
+
+                     <form class="sa-shop-search" data-shop-search action="shop.html" method="GET" role="search">
+                        <div class="sa-shop-search__field">
+                           <i class="fa-light fa-magnifying-glass" aria-hidden="true"></i>
+                           <input type="search" name="q" placeholder="Search products, vendors, SKU..." autocomplete="off" aria-label="Search products">
+                           <input type="hidden" name="category" value="">
+                           <input type="hidden" name="brand" value="">
+                           <input type="hidden" name="rating" value="">
+                           <input type="hidden" name="min_price" value="">
+                           <input type="hidden" name="max_price" value="">
+                           <input type="hidden" name="sort" value="default">
+                           <button type="button" class="sa-shop-search__clear" data-shop-search-clear aria-label="Clear search" hidden><i class="fa-light fa-xmark"></i></button>
+                        </div>
+                        <button class="mt-btn" type="submit"><i class="fa-light fa-search"></i> <span>Search</span></button>
+                        <span class="sa-shop-search__status" data-shop-search-status aria-live="polite"></span>
+                     </form>
+
+                     <div class="mt-shop-header mb-30">
+                        <h5 class="mt-shop-header-title">Loading products...</h5>
+                     </div>
+
+                     <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                           aria-labelledby="pills-home-tab">
+                           <div class="mt-shop-grid-wrapper ">
+                              <div class="row">
+                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mt-shop-grid-item p-relative mb-40">
+                                       <div class="mt-shop-grid-img mb-10">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><img src="assets/img/product/shop-1.jpg"
+                                                alt=""></a>
+                                       </div>
+                                       <div class="mt-shop-grid-content">
+                                          <div
+                                             class="mtflash__product-content mb-15 d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-price">
+                                                <span>$11.00</span>
+                                                <del>$15.00</del>
+                                             </div>
+                                             <div class="mtflash__product-ratting">
+                                                <span class="mtflash__product-ricon"><i
+                                                      class="fa-solid fa-star"></i></span>
+                                                <span class="mtflash__product-review-number">(4.5)</span>
+                                             </div>
+                                          </div>
+                                          <div class="mtfeature__product-content text-start mb-15">
+                                             <h5 class="mtfeature__product-title">
+                                                <a href="https://template.moontelict.com/rosun/product-details.html">
+                                                   Fresh packaged Red Tomato</a>
+                                             </h5>
+                                          </div>
+                                          <div
+                                             class="mtfeature__product-pricing-wrap d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-cate">
+                                                <span>1Kg</span>
+                                                <span>500Kg</span>
+                                             </div>
+                                             <div class="mtfeature__product-cart">
+                                                <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mt-shop-grid-item p-relative mb-40">
+                                       <div class="mt-shop-grid-img mb-10">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><img src="assets/img/product/feature-2-9.png"
+                                                alt=""></a>
+                                       </div>
+                                       <div class="mt-shop-grid-content">
+                                          <div
+                                             class="mtflash__product-content mb-15 d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-price">
+                                                <span>$22.00</span>
+                                                <del>$35.00</del>
+                                             </div>
+                                             <div class="mtflash__product-ratting">
+                                                <span class="mtflash__product-ricon"><i
+                                                      class="fa-solid fa-star"></i></span>
+                                                <span class="mtflash__product-review-number">(4.5)</span>
+                                             </div>
+                                          </div>
+                                          <div class="mtfeature__product-content text-start mb-15">
+                                             <h5 class="mtfeature__product-title">
+                                                <a href="https://template.moontelict.com/rosun/product-details.html">
+                                                   local organic Green Broccoli</a>
+                                             </h5>
+                                          </div>
+                                          <div
+                                             class="mtfeature__product-pricing-wrap d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-cate">
+                                                <span>2Kg</span>
+                                                <span>600Kg</span>
+                                             </div>
+                                             <div class="mtfeature__product-cart">
+                                                <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mt-shop-grid-item p-relative mb-40">
+                                       <div class="mt-shop-grid-img mb-10">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><img src="assets/img/product/feature-2-6.png"
+                                                alt=""></a>
+                                       </div>
+                                       <div class="mt-shop-grid-content">
+                                          <div
+                                             class="mtflash__product-content mb-15 d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-price">
+                                                <span>$25.00</span>
+                                                <del>$35.00</del>
+                                             </div>
+                                             <div class="mtflash__product-ratting">
+                                                <span class="mtflash__product-ricon"><i
+                                                      class="fa-solid fa-star"></i></span>
+                                                <span class="mtflash__product-review-number">(4.5)</span>
+                                             </div>
+                                          </div>
+                                          <div class="mtfeature__product-content text-start mb-15">
+                                             <h5 class="mtfeature__product-title">
+                                                <a href="https://template.moontelict.com/rosun/product-details.html">
+                                                   Organic Campa Yellow Bananas </a>
+                                             </h5>
+                                          </div>
+                                          <div
+                                             class="mtfeature__product-pricing-wrap d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-cate">
+                                                <span>1Kg</span>
+                                                <span>700Kg</span>
+                                             </div>
+                                             <div class="mtfeature__product-cart">
+                                                <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mt-shop-grid-item p-relative mb-40">
+                                       <div class="mt-shop-grid-img mb-10">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><img src="assets/img/product/feature-1-9.png"
+                                                alt=""></a>
+                                       </div>
+                                       <div class="mt-shop-grid-content">
+                                          <div
+                                             class="mtflash__product-content mb-15 d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-price">
+                                                <span>$8.00</span>
+                                                <del>$15.00</del>
+                                             </div>
+                                             <div class="mtflash__product-ratting">
+                                                <span class="mtflash__product-ricon"><i
+                                                      class="fa-solid fa-star"></i></span>
+                                                <span class="mtflash__product-review-number">(4.5)</span>
+                                             </div>
+                                          </div>
+                                          <div class="mtfeature__product-content text-start mb-15">
+                                             <h5 class="mtfeature__product-title">
+                                                <a href="https://template.moontelict.com/rosun/product-details.html">
+                                                   Green leafy bitter gourd</a>
+                                             </h5>
+                                          </div>
+                                          <div
+                                             class="mtfeature__product-pricing-wrap d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-cate">
+                                                <span>1Kg</span>
+                                                <span>500Kg</span>
+                                             </div>
+                                             <div class="mtfeature__product-cart">
+                                                <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mt-shop-grid-item p-relative mb-40">
+                                       <div class="mt-shop-grid-img mb-10">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><img src="assets/img/product/feature-1-8.png"
+                                                alt=""></a>
+                                       </div>
+                                       <div class="mt-shop-grid-content">
+                                          <div
+                                             class="mtflash__product-content mb-15 d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-price">
+                                                <span>$11.00</span>
+                                                <del>$15.00</del>
+                                             </div>
+                                             <div class="mtflash__product-ratting">
+                                                <span class="mtflash__product-ricon"><i
+                                                      class="fa-solid fa-star"></i></span>
+                                                <span class="mtflash__product-review-number">(4.5)</span>
+                                             </div>
+                                          </div>
+                                          <div class="mtfeature__product-content text-start mb-15">
+                                             <h5 class="mtfeature__product-title">
+                                                <a href="https://template.moontelict.com/rosun/product-details.html">
+                                                   Everist Meat Masala 100 Gm</a>
+                                             </h5>
+                                          </div>
+                                          <div
+                                             class="mtfeature__product-pricing-wrap d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-cate">
+                                                <span>1Kg</span>
+                                                <span>500Kg</span>
+                                             </div>
+                                             <div class="mtfeature__product-cart">
+                                                <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mt-shop-grid-item p-relative mb-40">
+                                       <div class="mt-shop-grid-img mb-10">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><img src="assets/img/product/feature-2-8.png"
+                                                alt=""></a>
+                                       </div>
+                                       <div class="mt-shop-grid-content">
+                                          <div
+                                             class="mtflash__product-content mb-15 d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-price">
+                                                <span>$12.00</span>
+                                                <del>$16.00</del>
+                                             </div>
+                                             <div class="mtflash__product-ratting">
+                                                <span class="mtflash__product-ricon"><i
+                                                      class="fa-solid fa-star"></i></span>
+                                                <span class="mtflash__product-review-number">(4.5)</span>
+                                             </div>
+                                          </div>
+                                          <div class="mtfeature__product-content text-start mb-15">
+                                             <h5 class="mtfeature__product-title">
+                                                <a href="https://template.moontelict.com/rosun/product-details.html">
+                                                   Kesar Sona Masoor Rice Indian</a>
+                                             </h5>
+                                          </div>
+                                          <div
+                                             class="mtfeature__product-pricing-wrap d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-cate">
+                                                <span>1Kg</span>
+                                                <span>500Kg</span>
+                                             </div>
+                                             <div class="mtfeature__product-cart">
+                                                <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mt-shop-grid-item p-relative mb-40">
+                                       <div class="mt-shop-grid-img mb-10">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><img src="assets/img/product/feature-1-6.png"
+                                                alt=""></a>
+                                       </div>
+                                       <div class="mt-shop-grid-content">
+                                          <div
+                                             class="mtflash__product-content mb-15 d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-price">
+                                                <span>$19.00</span>
+                                                <del>$25.00</del>
+                                             </div>
+                                             <div class="mtflash__product-ratting">
+                                                <span class="mtflash__product-ricon"><i
+                                                      class="fa-solid fa-star"></i></span>
+                                                <span class="mtflash__product-review-number">(4.5)</span>
+                                             </div>
+                                          </div>
+                                          <div class="mtfeature__product-content text-start mb-15">
+                                             <h5 class="mtfeature__product-title">
+                                                <a href="https://template.moontelict.com/rosun/product-details.html">
+                                                   Green leafy healthy spinach</a>
+                                             </h5>
+                                          </div>
+                                          <div
+                                             class="mtfeature__product-pricing-wrap d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-cate">
+                                                <span>1Kg</span>
+                                                <span>500Kg</span>
+                                             </div>
+                                             <div class="mtfeature__product-cart">
+                                                <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mt-shop-grid-item p-relative mb-40">
+                                       <div class="mt-shop-grid-img mb-10">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><img src="assets/img/product/feature-1-5.jpg"
+                                                alt=""></a>
+                                       </div>
+                                       <div class="mt-shop-grid-content">
+                                          <div
+                                             class="mtflash__product-content mb-15 d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-price">
+                                                <span>$11.00</span>
+                                                <del>$15.00</del>
+                                             </div>
+                                             <div class="mtflash__product-ratting">
+                                                <span class="mtflash__product-ricon"><i
+                                                      class="fa-solid fa-star"></i></span>
+                                                <span class="mtflash__product-review-number">(4.5)</span>
+                                             </div>
+                                          </div>
+                                          <div class="mtfeature__product-content text-start mb-15">
+                                             <h5 class="mtfeature__product-title">
+                                                <a href="https://template.moontelict.com/rosun/product-details.html">
+                                                   Vadilal Fruits & Nuts Ice Cream</a>
+                                             </h5>
+                                          </div>
+                                          <div
+                                             class="mtfeature__product-pricing-wrap d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-cate">
+                                                <span>1Kg</span>
+                                                <span>500Kg</span>
+                                             </div>
+                                             <div class="mtfeature__product-cart">
+                                                <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mt-shop-grid-item p-relative mb-40">
+                                       <div class="mt-shop-grid-img mb-10">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><img src="assets/img/product/feature-1-4.jpg"
+                                                alt=""></a>
+                                       </div>
+                                       <div class="mt-shop-grid-content">
+                                          <div
+                                             class="mtflash__product-content mb-15 d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-price">
+                                                <span>$15.00</span>
+                                                <del>$19.00</del>
+                                             </div>
+                                             <div class="mtflash__product-ratting">
+                                                <span class="mtflash__product-ricon"><i
+                                                      class="fa-solid fa-star"></i></span>
+                                                <span class="mtflash__product-review-number">(4.5)</span>
+                                             </div>
+                                          </div>
+                                          <div class="mtfeature__product-content text-start mb-15">
+                                             <h5 class="mtfeature__product-title">
+                                                <a href="https://template.moontelict.com/rosun/product-details.html">
+                                                   Yellow tropical mango fruit Fresh</a>
+                                             </h5>
+                                          </div>
+                                          <div
+                                             class="mtfeature__product-pricing-wrap d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-cate">
+                                                <span>1Kg</span>
+                                                <span>500Kg</span>
+                                             </div>
+                                             <div class="mtfeature__product-cart">
+                                                <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mt-shop-grid-item p-relative mb-40">
+                                       <div class="mt-shop-grid-img mb-10">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><img src="assets/img/product/feature-1-3.jpg"
+                                                alt=""></a>
+                                       </div>
+                                       <div class="mt-shop-grid-content">
+                                          <div
+                                             class="mtflash__product-content mb-15 d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-price">
+                                                <span>$21.00</span>
+                                                <del>$25.00</del>
+                                             </div>
+                                             <div class="mtflash__product-ratting">
+                                                <span class="mtflash__product-ricon"><i
+                                                      class="fa-solid fa-star"></i></span>
+                                                <span class="mtflash__product-review-number">(4.5)</span>
+                                             </div>
+                                          </div>
+                                          <div class="mtfeature__product-content text-start mb-15">
+                                             <h5 class="mtfeature__product-title">
+                                                <a href="https://template.moontelict.com/rosun/product-details.html">
+                                                   Orange root crunchy carrot</a>
+                                             </h5>
+                                          </div>
+                                          <div
+                                             class="mtfeature__product-pricing-wrap d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-cate">
+                                                <span>1Kg</span>
+                                                <span>500Kg</span>
+                                             </div>
+                                             <div class="mtfeature__product-cart">
+                                                <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mt-shop-grid-item p-relative mb-40">
+                                       <div class="mt-shop-grid-img mb-10">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><img src="assets/img/product/feature-1-2.jpg"
+                                                alt=""></a>
+                                       </div>
+                                       <div class="mt-shop-grid-content">
+                                          <div
+                                             class="mtflash__product-content mb-15 d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-price">
+                                                <span>$16.00</span>
+                                                <del>$25.00</del>
+                                             </div>
+                                             <div class="mtflash__product-ratting">
+                                                <span class="mtflash__product-ricon"><i
+                                                      class="fa-solid fa-star"></i></span>
+                                                <span class="mtflash__product-review-number">(4.5)</span>
+                                             </div>
+                                          </div>
+                                          <div class="mtfeature__product-content text-start mb-15">
+                                             <h5 class="mtfeature__product-title">
+                                                <a href="https://template.moontelict.com/rosun/product-details.html">
+                                                   Purple sweet delicious grape</a>
+                                             </h5>
+                                          </div>
+                                          <div
+                                             class="mtfeature__product-pricing-wrap d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-cate">
+                                                <span>1Kg</span>
+                                                <span>500Kg</span>
+                                             </div>
+                                             <div class="mtfeature__product-cart">
+                                                <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mt-shop-grid-item p-relative mb-40">
+                                       <div class="mt-shop-grid-img mb-10">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><img src="assets/img/product/feature-1-13.png"
+                                                alt=""></a>
+                                       </div>
+                                       <div class="mt-shop-grid-content">
+                                          <div
+                                             class="mtflash__product-content mb-15 d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-price">
+                                                <span>$17.00</span>
+                                                <del>$27.00</del>
+                                             </div>
+                                             <div class="mtflash__product-ratting">
+                                                <span class="mtflash__product-ricon"><i
+                                                      class="fa-solid fa-star"></i></span>
+                                                <span class="mtflash__product-review-number">(4.5)</span>
+                                             </div>
+                                          </div>
+                                          <div class="mtfeature__product-content text-start mb-15">
+                                             <h5 class="mtfeature__product-title">
+                                                <a href="https://template.moontelict.com/rosun/product-details.html">
+                                                   Yellow elongated banana fruit</a>
+                                             </h5>
+                                          </div>
+                                          <div
+                                             class="mtfeature__product-pricing-wrap d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-cate">
+                                                <span>1Kg</span>
+                                                <span>500Kg</span>
+                                             </div>
+                                             <div class="mtfeature__product-cart">
+                                                <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mt-shop-grid-item p-relative mb-40">
+                                       <div class="mt-shop-grid-img mb-10">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><img src="assets/img/product/feature-1-12.png"
+                                                alt=""></a>
+                                       </div>
+                                       <div class="mt-shop-grid-content">
+                                          <div
+                                             class="mtflash__product-content mb-15 d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-price">
+                                                <span>$18.00</span>
+                                                <del>$29.00</del>
+                                             </div>
+                                             <div class="mtflash__product-ratting">
+                                                <span class="mtflash__product-ricon"><i
+                                                      class="fa-solid fa-star"></i></span>
+                                                <span class="mtflash__product-review-number">(4.5)</span>
+                                             </div>
+                                          </div>
+                                          <div class="mtfeature__product-content text-start mb-15">
+                                             <h5 class="mtfeature__product-title">
+                                                <a href="https://template.moontelict.com/rosun/product-details.html">
+                                                   Purple bulbous tasty eggplant</a>
+                                             </h5>
+                                          </div>
+                                          <div
+                                             class="mtfeature__product-pricing-wrap d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-cate">
+                                                <span>1Kg</span>
+                                                <span>500Kg</span>
+                                             </div>
+                                             <div class="mtfeature__product-cart">
+                                                <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mt-shop-grid-item p-relative mb-40">
+                                       <div class="mt-shop-grid-img mb-10">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><img src="assets/img/product/feature-1-11.png"
+                                                alt=""></a>
+                                       </div>
+                                       <div class="mt-shop-grid-content">
+                                          <div
+                                             class="mtflash__product-content mb-15 d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-price">
+                                                <span>$13.00</span>
+                                                <del>$15.00</del>
+                                             </div>
+                                             <div class="mtflash__product-ratting">
+                                                <span class="mtflash__product-ricon"><i
+                                                      class="fa-solid fa-star"></i></span>
+                                                <span class="mtflash__product-review-number">(4.5)</span>
+                                             </div>
+                                          </div>
+                                          <div class="mtfeature__product-content text-start mb-15">
+                                             <h5 class="mtfeature__product-title">
+                                                <a href="https://template.moontelict.com/rosun/product-details.html">
+                                                   Fresh packaged Red Tomato</a>
+                                             </h5>
+                                          </div>
+                                          <div
+                                             class="mtfeature__product-pricing-wrap d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-cate">
+                                                <span>1Kg</span>
+                                                <span>500Kg</span>
+                                             </div>
+                                             <div class="mtfeature__product-cart">
+                                                <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mt-shop-grid-item p-relative mb-40">
+                                       <div class="mt-shop-grid-img mb-10">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><img src="assets/img/product/feature-1-10.png"
+                                                alt=""></a>
+                                       </div>
+                                       <div class="mt-shop-grid-content">
+                                          <div
+                                             class="mtflash__product-content mb-15 d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-price">
+                                                <span>$14.00</span>
+                                                <del>$19.00</del>
+                                             </div>
+                                             <div class="mtflash__product-ratting">
+                                                <span class="mtflash__product-ricon"><i
+                                                      class="fa-solid fa-star"></i></span>
+                                                <span class="mtflash__product-review-number">(4.5)</span>
+                                             </div>
+                                          </div>
+                                          <div class="mtfeature__product-content text-start mb-15">
+                                             <h5 class="mtfeature__product-title">
+                                                <a href="https://template.moontelict.com/rosun/product-details.html">
+                                                   Green flowering healthy broccoli</a>
+                                             </h5>
+                                          </div>
+                                          <div
+                                             class="mtfeature__product-pricing-wrap d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-cate">
+                                                <span>1Kg</span>
+                                                <span>500Kg</span>
+                                             </div>
+                                             <div class="mtfeature__product-cart">
+                                                <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <div class="mt-shop-grid-item p-relative mb-40">
+                                       <div class="mt-shop-grid-img mb-10">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><img src="assets/img/product/feature-1-1.jpg"
+                                                alt=""></a>
+                                       </div>
+                                       <div class="mt-shop-grid-content">
+                                          <div
+                                             class="mtflash__product-content mb-15 d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-price">
+                                                <span>$11.00</span>
+                                                <del>$15.00</del>
+                                             </div>
+                                             <div class="mtflash__product-ratting">
+                                                <span class="mtflash__product-ricon"><i
+                                                      class="fa-solid fa-star"></i></span>
+                                                <span class="mtflash__product-review-number">(4.5)</span>
+                                             </div>
+                                          </div>
+                                          <div class="mtfeature__product-content text-start mb-15">
+                                             <h5 class="mtfeature__product-title">
+                                                <a href="https://template.moontelict.com/rosun/product-details.html">
+                                                   Fresh packaged Red Tomato</a>
+                                             </h5>
+                                          </div>
+                                          <div
+                                             class="mtfeature__product-pricing-wrap d-flex align-items-center justify-content-between">
+                                             <div class="mtfeature__product-cate">
+                                                <span>1Kg</span>
+                                                <span>500Kg</span>
+                                             </div>
+                                             <div class="mtfeature__product-cart">
+                                                <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                             </div>
+                                          </div>
+                                       </div>
+
+                                    </div>
+                                 </div>
+                              </div>
+
+                              <!--pagination  -->
+                              <div
+                                 class="mt-pagination-wrap d-flex align-items-center justify-content-between mt-20 flex-wrap">
+                                 <div class="mt-pagination mb-20">
+                                    <a href="shop.html#" class="button"><i class="fa-regular fa-chevron-left"></i> Prev</a>
+                                    <a href="shop.html#">1</a>
+                                    <a href="shop.html#">2</a>
+                                    <a href="shop.html#">3</a>
+                                    <a href="shop.html#">...</a>
+                                    <a href="shop.html#" class="button">Next <i class="fa-regular fa-chevron-right"></i> </a>
+                                 </div>
+                                 <div class="mt-pagination-sort mb-20">
+                                    <div class="ddd">
+                                       <span>Show</span>
+                                    </div>
+                                    <select>
+                                       <option>12</option>
+                                       <option>16</option>
+                                       <option>20</option>
+                                       <option>25</option>
+                                    </select>
+                                 </div>
+                              </div>
+
+                           </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                           aria-labelledby="pills-profile-tab">
+                           <div class="mt-shop-list-wrapper">
+                              <div class="mt-shop-list-item mb-40 d-flex align-items-center">
+                                 <div class="mt-shop-list-img">
+                                    <a href="https://template.moontelict.com/rosun/product-details.html">
+                                       <img src="assets/img/product/feature-1-9.png" alt="">
+                                    </a>
+
+                                 </div>
+                                 <div class="mt-shop-list-content-wrap ">
+                                    <div
+                                       class="mt-shop-list-content mb-17 d-flex align-items-end justify-content-between">
+                                       <h3 class="mt-shop-list-title mb-0">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html">Green flowering healthy broccoli</a>
+                                       </h3>
+                                       <div class="mt-shop-list-offer">
+                                          <span>50% OFF</span>
+                                       </div>
+                                    </div>
+                                    <p class="mb-15">Broccoli is a vibrant green vegetable with a unique appearance. It
+                                       features a
+                                       thick, edible stem topped with clusters of small, dark
+                                       green flower buds. </p>
+                                    <div class="mt-shop-list-pricing-wrap mb-20 d-flex align-items-center">
+                                       <div class="mt-shop-list-cate mr-10">
+                                          <span>1Kg</span>
+                                          <span>500Kg</span>
+                                       </div>
+                                       <div class="mt-shop-list-rating">
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                       </div>
+                                    </div>
+
+                                    <div
+                                       class="mt-shop-list-price-wrap d-flex align-items-center justify-content-between">
+                                       <div class="mt-shop-list-price">
+                                          <del>$15.00</del>
+                                          <span>$11.00</span>
+
+                                       </div>
+                                       <div class="mt-shop-list-btn">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><i class="fa-sharp fa-regular fa-eye"></i></a>
+                                          <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                          <a href="https://template.moontelict.com/rosun/wishlist.html"><i class="fa-regular fa-heart"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="mt-shop-list-item mb-40 d-flex align-items-center">
+                                 <div class="mt-shop-list-img">
+                                    <a href="https://template.moontelict.com/rosun/product-details.html">
+                                       <img src="assets/img/product/feature-1-2.jpg" alt="">
+                                    </a>
+
+                                 </div>
+                                 <div class="mt-shop-list-content-wrap ">
+                                    <div
+                                       class="mt-shop-list-content mb-17 d-flex align-items-end justify-content-between">
+                                       <h3 class="mt-shop-list-title mb-0">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html">Tropical brown coconut water</a>
+                                       </h3>
+                                       <div class="mt-shop-list-offer">
+                                          <span>50% OFF</span>
+                                       </div>
+                                    </div>
+                                    <p class="mb-15">Broccoli is a vibrant green vegetable with a unique appearance. It
+                                       features a
+                                       thick, edible stem topped with clusters of small, dark
+                                       green flower buds. </p>
+                                    <div class="mt-shop-list-pricing-wrap mb-20 d-flex align-items-center">
+                                       <div class="mt-shop-list-cate mr-10">
+                                          <span>1Kg</span>
+                                          <span>500Kg</span>
+                                       </div>
+                                       <div class="mt-shop-list-rating">
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                       </div>
+                                    </div>
+
+                                    <div
+                                       class="mt-shop-list-price-wrap d-flex align-items-center justify-content-between">
+                                       <div class="mt-shop-list-price">
+                                          <del>$18.00</del>
+                                          <span>$13.00</span>
+
+                                       </div>
+                                       <div class="mt-shop-list-btn">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><i class="fa-sharp fa-regular fa-eye"></i></a>
+                                          <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                          <a href="https://template.moontelict.com/rosun/wishlist.html"><i class="fa-regular fa-heart"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="mt-shop-list-item mb-40 d-flex align-items-center">
+                                 <div class="mt-shop-list-img">
+                                    <a href="https://template.moontelict.com/rosun/product-details.html">
+                                       <img src="assets/img/product/feature-1-4.jpg" alt="">
+                                    </a>
+
+                                 </div>
+                                 <div class="mt-shop-list-content-wrap ">
+                                    <div
+                                       class="mt-shop-list-content mb-17 d-flex align-items-end justify-content-between">
+                                       <h3 class="mt-shop-list-title mb-0">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html">Purple bulbous tasty eggplant</a>
+                                       </h3>
+                                       <div class="mt-shop-list-offer">
+                                          <span>50% OFF</span>
+                                       </div>
+                                    </div>
+                                    <p class="mb-15">Broccoli is a vibrant green vegetable with a unique appearance. It
+                                       features a
+                                       thick, edible stem topped with clusters of small, dark
+                                       green flower buds. </p>
+                                    <div class="mt-shop-list-pricing-wrap mb-20 d-flex align-items-center">
+                                       <div class="mt-shop-list-cate mr-10">
+                                          <span>1Kg</span>
+                                          <span>500Kg</span>
+                                       </div>
+                                       <div class="mt-shop-list-rating">
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                       </div>
+                                    </div>
+
+                                    <div
+                                       class="mt-shop-list-price-wrap d-flex align-items-center justify-content-between">
+                                       <div class="mt-shop-list-price">
+                                          <del>$25.00</del>
+                                          <span>$18.00</span>
+
+                                       </div>
+                                       <div class="mt-shop-list-btn">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><i class="fa-sharp fa-regular fa-eye"></i></a>
+                                          <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                          <a href="https://template.moontelict.com/rosun/wishlist.html"><i class="fa-regular fa-heart"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="mt-shop-list-item mb-40 d-flex align-items-center">
+                                 <div class="mt-shop-list-img ">
+                                    <a href="https://template.moontelict.com/rosun/product-details.html">
+                                       <img src="assets/img/product/feature-1-12.png" alt="">
+                                    </a>
+
+                                 </div>
+                                 <div class="mt-shop-list-content-wrap ">
+                                    <div
+                                       class="mt-shop-list-content mb-17 d-flex align-items-end justify-content-between">
+                                       <h3 class="mt-shop-list-title mb-0">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html">Yellow squash summer vegetable</a>
+                                       </h3>
+                                       <div class="mt-shop-list-offer">
+                                          <span>50% OFF</span>
+                                       </div>
+                                    </div>
+                                    <p class="mb-15">Broccoli is a vibrant green vegetable with a unique appearance. It
+                                       features a
+                                       thick, edible stem topped with clusters of small, dark
+                                       green flower buds. </p>
+                                    <div class="mt-shop-list-pricing-wrap mb-20 d-flex align-items-center">
+                                       <div class="mt-shop-list-cate mr-10">
+                                          <span>1Kg</span>
+                                          <span>500Kg</span>
+                                       </div>
+                                       <div class="mt-shop-list-rating">
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                          <span><i class="fa-solid fa-star"></i></span>
+                                       </div>
+                                    </div>
+
+                                    <div
+                                       class="mt-shop-list-price-wrap d-flex align-items-center justify-content-between">
+                                       <div class="mt-shop-list-price">
+                                          <del>$15.00</del>
+                                          <span>$11.00</span>
+
+                                       </div>
+                                       <div class="mt-shop-list-btn">
+                                          <a href="https://template.moontelict.com/rosun/product-details.html"><i class="fa-sharp fa-regular fa-eye"></i></a>
+                                          <a href="https://template.moontelict.com/rosun/cart.html"><i class="fa-solid fa-basket-shopping"></i></a>
+                                          <a href="https://template.moontelict.com/rosun/wishlist.html"><i class="fa-regular fa-heart"></i></a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+
+                              <!--pagination  -->
+                              <div
+                                 class="mt-pagination-wrap d-flex align-items-center justify-content-between mt-20 flex-wrap">
+                                 <div class="mt-pagination mb-20">
+                                    <a href="shop.html#" class="button"><i class="fa-regular fa-chevron-left"></i> Prev</a>
+                                    <a href="shop.html#">1</a>
+                                    <a href="shop.html#">2</a>
+                                    <a href="shop.html#">3</a>
+                                    <a href="shop.html#">...</a>
+                                    <a href="shop.html#" class="button">Next <i class="fa-regular fa-chevron-right"></i> </a>
+                                 </div>
+                                 <div class="mt-pagination-sort mb-20">
+                                    <div class="ddd">
+                                       <span>Show</span>
+                                    </div>
+                                    <select>
+                                       <option>12</option>
+                                       <option>16</option>
+                                       <option>20</option>
+                                       <option>25</option>
+                                    </select>
+                                 </div>
+                              </div>
+
+                           </div>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- End Shop Area -->
+
+      <!-- Start Newslatter Area -->
+      <section class="mtnewslatter__area mtnewslatter__space  mb-120">
+         <div class="container">
+            <div class="mtnewslatter__mainwrapper p-relative fix br-20 wow img-custom-anim-left"
+               data-wow-duration="1.5s" data-wow-delay="0.1s"
+               data-background="assets/img/newslatter/newslatter-bg-2.jpg">
+               <div class="mtnewslatter__shape">
+                  <img src="assets/img/newslatter/star.png" alt="">
+               </div>
+               <div class="row align-items-center">
+                  <div class="col-lg-6">
+                     <div class="mtnewslatter__wrapper wow img-custom-anim-left" data-wow-duration="1.5s"
+                        data-wow-delay="0.5s">
+                        <div class="mtnewslatter__item">
+                           <h3 class="mtnewslatter__title mb-10 ">Subscribe <span class="p-relative">newsletter <img
+                                    src="assets/img/newslatter/shape-text.png" alt=""></span> <br>
+                              to get offers
+
+                           </h3>
+                           <p class="mb-35">Enjoy early access to sales, new product launches, expert advice, and
+                              special offers delivered straight to your inbox.</p>
+                           <form action="shop.html#">
+                              <div class="mtnewslatter__subscribe p-relative">
+                                 <input type="email" placeholder="Enter Your Eamil">
+                                 <button type="submit" class="mt-btn">Subscribe</button>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+      </section>
+      <!-- End Newslatter Area -->
+
+      <!-- feature area Start -->
+      <section class="mtfeature__area mtfeature__bg pb-50 pt-60 fix">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-lg-3 col-md-4">
+                  <div class="mtfeature__wrapper d-flex align-items-center">
+                     <div class="mtfeature__icon">
+                        <img src="assets/img/feature/feature-1-1.jpg" alt="">
+                     </div>
+                     <div class="mtfeature__content">
+                        <h5 class="mtfeature__title">U.S. Warehouse Shipping</h5>
+                           <p>Free shipping on your first order from our U.S. warehouse</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-4">
+                  <div class="mtfeature__wrapper d-flex align-items-center">
+                     <div class="mtfeature__icon">
+                        <img src="assets/img/feature/feature-1-2.jpg" alt="">
+                     </div>
+                     <div class="mtfeature__content">
+                        <h5 class="mtfeature__title">Secure Payments
+                        </h5>
+                        <p>
+                           our financial information is <br>
+                           protected
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-4">
+                  <div class="mtfeature__wrapper d-flex align-items-center">
+                     <div class="mtfeature__icon">
+                        <img src="assets/img/feature/feature-1-3.jpg" alt="">
+                     </div>
+                     <div class="mtfeature__content">
+                        <h5 class="mtfeature__title">24 Hour Support</h5>
+                        <p>
+                           We're here to help whenever <br>
+                           you need us.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-4">
+                  <div class="mtfeature__wrapper d-flex align-items-center">
+                     <div class="mtfeature__icon">
+                        <img src="assets/img/feature/feature-1-4.jpg" alt="">
+                     </div>
+                     <div class="mtfeature__content">
+                        <h5 class="mtfeature__title">Best Prices & Offers</h5>
+                        <p>
+                           Provides unbeatable deals <br> on a wide range of products
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- feature area End -->
+
+
+   </main>
+
+   <!-- footer start  -->
+   <footer class="mt-footer-area mt-footer-2 p-relative fix pt-80" data-bg-color="#171A2B">
+      <div class="mt-footer-wraper p-relative">
+         <div class="container">
+            <div class="row ">
+               <div class="col-lg-3 col-md-4">
+                  <div class="mt-footer-widget footer-2-cols-1">
+                     <div class="mt-footer-logo mb-20">
+                        <a href="shop.html#"><img src="assets/img/logo/white-logo.png" alt=""></a>
+                     </div>
+                     <div class="mt-footer-content">
+                        <p class="mb-25">Roshun is a online grocery shop. we are selling grocery products</p>
+                        <div class="mt-footer-social mb-30">
+                           <a href="shop.html#"><i class="fa-brands fa-pinterest-p"></i></a>
+                           <a href="shop.html#"><i class="fa-brands fa-instagram"></i></a>
+                           <a href="shop.html#"><i class="fa-brands fa-facebook-f"></i></a>
+                        </div>
+                        <div class="mt-footer-app mb-20">
+                           <h4 class="mt-footer-app-title">Download App</h4>
+                           <div class="mt-footer-app-img mt-20">
+                              <a href="shop.html#"><img src="assets/img/footer/goolge-play.png" alt="Rosun"></a>
+                              <a href="shop.html#"><img src="assets/img/footer/app-store.png" alt="Rosun"></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-9 col-md-8">
+                  <div class="mt-footer-wrapper mb-30">
+                     <div class="row">
+                        <div class="col-xl-3 col-md-6 mb-50">
+                           <div class="mt-footer-widget footer-2-cols-2">
+                              <h2 class="mt-footer-title mb-50">Company </h2>
+                              <div class="mt-footer-list">
+                                 <ul>
+                                    <li><a href="https://template.moontelict.com/rosun/about.html">About Us</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/contact.html">Contact Us</a></li>
+                                    <li><a href="shop.html#">Privacy Policy</a></li>
+                                    <li><a href="shop.html#">Terms & Condition</a></li>
+                                    <li><a href="shop.html#">Site Map</a></li>
+                                    <li><a href="shop.html#">Careers</a></li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-50">
+                           <div class="mt-footer-widget footer-2-cols-3">
+                              <h2 class="mt-footer-title mb-50">Quick Links </h2>
+                              <div class="mt-footer-list">
+                                 <ul>
+                                    <li><a href="https://template.moontelict.com/rosun/about.html">About Company</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/blog.html">Articles & Blogs</a></li>
+                                    <li><a href="shop.html">Flash Sales</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/checkout.html">Checkout</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/faq.html">FAQs Page</a></li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-50">
+                           <div class="mt-footer-widget footer-2-cols-4">
+                              <h2 class="mt-footer-title mb-50">Support </h2>
+                              <div class="mt-footer-list">
+                                 <ul>
+                                    <li><a href="https://template.moontelict.com/rosun/login.html">My Account</a></li>
+                                    <li><a href="shop.html#">Payment Method</a></li>
+                                    <li><a href="shop.html#">License & Permit</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/about.html">Our Partners</a></li>
+                                    <li><a href="https://template.moontelict.com/rosun/contact.html">Support Center</a></li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 mb-50">
+                           <div class="mt-footer-widget footer-2-cols-5">
+                              <h2 class="mt-footer-title mb-50">Category </h2>
+                              <div class="mt-footer-list">
+                                 <ul>
+                                    <li><a href="shop.html">Fresh Produce</a></li>
+                                    <li><a href="shop.html">Dairy & Eggs</a></li>
+                                    <li><a href="shop.html">Meat & Seafood</a></li>
+                                    <li><a href="shop.html">Beverages</a></li>
+                                    <li><a href="shop.html">Vegetables</a></li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="mt-footer-midel mt-footer-midel-border pb-30">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-3 col-md-6">
+                  <div class="mt-footer-midel-item d-flex align-items-center mb-20">
+                     <div class="mt-footer-midel-icon mr-15">
+                        <span><i class="fa-solid fa-location-dot"></i></span>
+                     </div>
+                     <div class="mt-footer-midel-content">
+                        <a href="shop.html#">Tri Opposite 123 Main Street, <br>
+                           Anytown, California 90210 USA</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="mt-footer-midel-item d-flex align-items-center mb-20 justify-content-lg-center">
+                     <div class="mt-footer-midel-icon mr-15">
+                        <span><i class="fa-light fa-envelope-open-text"></i></span>
+                     </div>
+                     <div class="mt-footer-midel-content">
+                        </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="mt-footer-midel-item d-flex align-items-center mb-20 justify-content-lg-center">
+                     <div class="mt-footer-midel-icon mr-15">
+                        <span><i class="fa-regular fa-headset"></i></span>
+                     </div>
+                     <div class="mt-footer-midel-content">
+                        <a href="tel:+991234567888">+99 123 4567 888</a><br>
+                        <a href="tel:+1(305)761-7075
+">+1(305)761-7075
+</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="mt-footer-midel-item d-flex align-items-center mb-20  justify-content-lg-center">
+                     <div class="mt-footer-midel-icon mr-15">
+                        <span><i class="fa-light fa-clock"></i></span>
+                     </div>
+                     <div class="mt-footer-midel-content">
+                        <a href="shop.html#">10:00 - 18:00 <br>
+                           Monday - saturday</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- copy-right area start -->
+      <div class="mt-copyright-area mt-copyright-2  pt-20 pb-20">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
+                  <div class="mt-copyright-left text-center text-md-start">
+                     <p>Copyright 2025 ©Seller Africa
+. All rights reserved.</p>
+                  </div>
+               </div>
+               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
+                  <div class="mt-copyright-right text-center text-md-end">
+                     <img src="assets/img/footer/payment.png" alt="">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- copy-right area end -->
+   </footer>
+
+
+   <!-- JS here -->
+   <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-min.js"></script>
+   <script src="assets/js/bootstrap.min.js"></script>
+   <script src="assets/js/nice-select.js"></script>
+   <script src="assets/js/magnific-popup.js"></script>
+   <script src="assets/js/range-slider.js"></script>
+   <script src="assets/js/swiper-min.js"></script>
+   <script src="assets/js/wow.js"></script>
+   <script src="assets/js/countdown.js"></script>
+   <script src="assets/js/mobile-menu-scripts.js"></script>
+   <script src="../assets/js/toasts.js"></script>
+   <script src="../assets/js/template-storefront.js"></script>
+   <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

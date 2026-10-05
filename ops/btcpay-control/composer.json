@@ -1,0 +1,6 @@
+{
+  "name": "private/btcpay-control",
+  "description": "Independent BTCPay operations console",
+  "require": {"php": "^8.2", "ext-pdo": "*", "ext-pdo_sqlite": "*", "spomky-labs/otphp": "^11.4"},
+  "config": {"allow-plugins": false, "sort-packages": true}
+}

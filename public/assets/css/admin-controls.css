@@ -1,0 +1,69 @@
+/* Shared admin controls; kept separate from public storefront and login styles. */
+.admin-layout {
+    --control-border: #cbd5d0;
+    --control-text: #20362c;
+    --control-muted: #58675f;
+    --control-primary: #176442;
+    --control-focus: #177d51;
+}
+.admin-layout .content {font-size:14px;line-height:1.5;letter-spacing:0}
+.admin-layout .content :is(form,fieldset,label) {min-width:0;max-width:100%}
+.admin-layout .content label {line-height:1.45}
+.admin-layout .content :is(.settings-field,.vendor-field,.field)>span {font-size:13px!important;font-weight:600!important;color:var(--control-text)!important;letter-spacing:0!important}
+.admin-layout .admin-main input:where(:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=submit]):not([type=button])),
+.admin-layout .admin-main select,
+.admin-layout .admin-main textarea {
+    box-sizing:border-box!important;width:100%;max-width:100%!important;min-width:0!important;
+    min-height:44px!important;padding:10px 12px!important;border:1px solid var(--control-border)!important;
+    border-radius:6px!important;background:#fff!important;color:var(--control-text)!important;
+    font:inherit!important;font-size:14px!important;font-weight:400!important;line-height:1.5!important;
+    box-shadow:none!important;letter-spacing:0!important;transition:border-color .15s ease;
+}
+.admin-layout .admin-main select {padding-right:28px!important}
+.admin-layout .admin-main textarea {min-height:120px!important;resize:vertical}
+.admin-layout .admin-main input[type=file] {height:auto!important;min-height:48px!important;padding:6px!important;overflow:hidden}
+.admin-layout input[type=file]::file-selector-button {font:inherit;padding:7px 10px;margin-right:10px;background:#eef4f0;border:1px solid var(--control-border);border-radius:4px;color:var(--control-text);cursor:pointer}
+.admin-layout .admin-main input:is([type=checkbox],[type=radio]) {appearance:auto!important;width:20px!important;height:20px!important;min-height:20px!important;max-width:20px!important;padding:0!important;margin:0 6px 0 0!important;box-shadow:none!important;accent-color:var(--control-primary);flex:0 0 20px;vertical-align:middle}
+.admin-layout .admin-main input[type=color] {width:52px!important;min-height:44px!important;padding:4px!important}
+.admin-layout .admin-main input[type=hidden] {display:none!important}
+.admin-layout .admin-main :is(input,select,textarea):focus-visible {
+    outline:2px solid var(--control-focus)!important;outline-offset:2px!important;
+    border-color:var(--control-focus)!important;box-shadow:none!important;
+}
+.admin-layout .admin-main :is(input,select,textarea)[aria-invalid=true] {border-color:#b42318!important}
+.admin-layout .admin-main :is(input,select,textarea):disabled {background:#f0f2f1!important;color:#68756e!important;cursor:not-allowed}
+.admin-layout .admin-main input[readonly] {background:#f5f7f6!important}
+.admin-layout .content :is(.btn,button[type=submit],input[type=submit]) {
+    box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    min-height:44px!important;height:auto!important;max-width:100%;padding:10px 16px!important;
+    border:1px solid var(--control-primary)!important;border-radius:6px!important;
+    background:var(--control-primary)!important;color:#fff!important;
+    font:inherit!important;font-size:14px!important;font-weight:600!important;line-height:1.4!important;
+    white-space:normal!important;text-align:center;overflow-wrap:anywhere;text-decoration:none;
+    box-shadow:none!important;transform:none!important;cursor:pointer;
+}
+.admin-layout .content :is(.btn.secondary,button.secondary) {background:#fff!important;color:var(--control-text)!important;border-color:var(--control-border)!important}
+.admin-layout .content :is(.btn.danger,button.danger) {background:#fff1f0!important;color:#a62119!important;border-color:#efb4af!important}
+.admin-layout .content :is(.btn,button[type=submit]):hover:not(:disabled) {filter:brightness(.96);box-shadow:none!important;transform:none!important}
+.admin-layout :is(button,.btn,a,input,select,textarea):focus-visible {outline:2px solid var(--control-focus)!important;outline-offset:3px!important}
+.admin-layout .content :is(.btn,button):disabled {opacity:.55;cursor:not-allowed;box-shadow:none!important}
+.admin-layout .content :is(.form-actions,.settings-actions,.action-cell) {display:flex;flex-wrap:wrap;align-items:center;gap:10px;min-width:0}
+.admin-layout .content :is(.form-actions,.settings-actions,.action-cell)>form {margin:0}
+.admin-layout .content :is(.settings-form-grid,.form-grid) {gap:18px!important}
+.admin-layout .content .settings-field {align-content:start;gap:6px!important}
+.admin-layout .content :is(.panel-header h2,.panel h2) {font-size:22px!important;line-height:1.3!important;letter-spacing:0!important}
+.admin-layout .content :is(.panel h3,.panel-header h3) {font-size:18px!important;line-height:1.35!important;letter-spacing:0!important}
+.admin-layout .content :is(.panel-header p,.settings-help,.field-help) {color:var(--control-muted);line-height:1.5}
+.admin-layout .vendor-payment-tools {border-top:1px solid #dce5df;border-bottom:1px solid #dce5df;padding:20px 0;margin:0 0 24px}
+.admin-layout .vendor-payment-tools h3 {margin:0 0 6px}
+.admin-layout .vendor-payment-tools p {overflow-wrap:anywhere;margin:0 0 16px}
+.admin-layout .vendor-payment-form {display:flex;align-items:end;flex-wrap:wrap;gap:12px}
+.admin-layout .vendor-payment-form label {flex:1 1 280px}
+@media(max-width:720px){
+    .admin-layout .admin-main input:not([type=hidden]):not([type=checkbox]):not([type=radio]),.admin-layout .admin-main select,.admin-layout .admin-main textarea {font-size:16px!important}
+    .admin-layout .content :is(.settings-form-grid,.form-grid,.payment-link-form) {grid-template-columns:minmax(0,1fr)!important}
+    .admin-layout .content :is(.settings-field,.field,.vendor-field) {grid-column:auto!important}
+    .admin-layout .vendor-payment-form {display:grid;grid-template-columns:minmax(0,1fr)}
+    .admin-layout .vendor-payment-form :is(.btn,button) {width:100%}
+}
+@media(prefers-reduced-motion:reduce){.admin-layout .admin-main :is(input,select,textarea){transition:none}}

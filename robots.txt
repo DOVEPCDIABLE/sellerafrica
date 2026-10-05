@@ -1,0 +1,45 @@
+# Block Ahrefs competitive intelligence
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: AhrefsSiteAudit
+Disallow: /
+
+# Block Semrush competitive intelligence
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: SemrushBot-SA
+Disallow: /
+
+User-agent: SemrushBot-BA
+Disallow: /
+
+User-agent: SemrushBot-SI
+Disallow: /
+
+User-agent: SiteAuditBot
+Disallow: /
+
+User-agent: SemrushBot-SWA
+Disallow: /
+
+User-agent: SemrushBot-OCOB
+Disallow: /
+
+User-agent: SemrushBot-FT
+Disallow: /
+
+User-agent: SemrushBot-ESI
+Disallow: /
+
+# Block Similarweb crawler
+User-agent: similarweb
+Disallow: /
+
+# Other restricted crawlers
+User-agent: dotbot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

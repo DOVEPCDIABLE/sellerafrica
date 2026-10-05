@@ -1,0 +1,10 @@
+[Unit]
+Description=Restart the existing BTCPay Docker stack
+After=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/root/btcpayserver-docker
+ExecStart=/root/btcpayserver-docker/btcpay-restart.sh
+TimeoutStartSec=600
+UMask=0077

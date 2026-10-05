@@ -1,0 +1,20 @@
+[Unit]
+Description=Independent BTCPay control PHP worker
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/cpanel/ea-php82/root/usr/sbin/php-fpm --nodaemonize --fpm-config /etc/btcpay-control/php-fpm.conf
+ExecReload=/bin/kill -USR2 $MAINPID
+Restart=on-failure
+RuntimeDirectory=btcpay-control
+RuntimeDirectoryMode=0755
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/btcpay-control /var/lib/btcpay-control-root /run/btcpay-control /run/btcpay-control-ops
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

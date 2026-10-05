@@ -1,0 +1,141 @@
+Options -Indexes
+ServerSignature Off
+ErrorDocument 403 /error?code=403
+ErrorDocument 404 /error?code=404
+RewriteEngine On
+RewriteBase /
+
+
+SetEnvIf Authorization "(.+)" HTTP_AUTHORIZATION=$1
+
+RewriteCond %{HTTP:Authorization} ^(.+)$
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%1]
+
+<FilesMatch "(?i)(^\.|composer\.(json|lock)|package(-lock)?\.json|php\.ini|.*\.(sql|log|bak|backup|old|orig|save|zip|tar|tgz|gz|bz2|7z|rar|ini|phar|sh|env))$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(self \"https://js.stripe.com\" \"https://checkout.stripe.com\" \"https://js.klasha.com\" \"https://*.klasha.com\")"
+    Header always set X-Permitted-Cross-Domain-Policies "none"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" "expr=%{HTTPS} == 'on' || req('X-Forwarded-Proto') == 'https'"
+</IfModule>
+
+RewriteCond %{THE_REQUEST} \s+/(?:.+/)?public/(login|logout|onboarding|register|verify-email|forgot_password|reset_password)\.php[\s?] [NC]
+RewriteRule ^(login|logout|onboarding|register|verify-email|forgot_password|reset_password)\.php$ $1 [R=302,L]
+
+RewriteRule ^dashboard/distributors/?$ distributor.php?route=dashboard/distributors [QSA,L]
+RewriteRule ^dashboard/?$ dashboard.php [QSA,L]
+RewriteRule ^dashboard/([^/]+)/?$ dashboard.php?view=$1 [QSA,L]
+RewriteRule ^error/?$ error.php [QSA,L]
+RewriteRule ^$ index.php?route=distributors [QSA,L]
+RewriteRule ^home/?$ index.php?route=home [QSA,L]
+RewriteRule ^store/?$ index.php?route=home [QSA,L]
+RewriteRule ^marketplace/?$ index.php?route=marketplace [QSA,L]
+RewriteRule ^sacfrozen/?$ frozen/index.php [QSA,L]
+RewriteRule ^sacfrozen/vendor/?$ frozen/vendor.php [QSA,L]
+RewriteRule ^sacfrozen/buyer/?$ frozen/buyer.php [QSA,L]
+RewriteRule ^sacfrozen/waitlist/?$ frozen/waitlist.php [QSA,L]
+RewriteRule ^sacfrozen/waitlist-intent/?$ frozen/waitlist-intent.php [QSA,L]
+RewriteRule ^sacfrozen/pricing/?$ frozen/pricing.php [QSA,L]
+RewriteRule ^sacfrozen/vendor-terms/?$ frozen/vendor_t\&c.php [QSA,L]
+RewriteRule ^sacfrozen/user-terms/?$ frozen/user_t\&c.php [QSA,L]
+RewriteRule ^shop/?$ index.php?route=shop [QSA,L]
+RewriteRule ^about/?$ index.php?route=about [QSA,L]
+RewriteRule ^contact/?$ index.php?route=contact [QSA,L]
+RewriteRule ^affiliate-registration/?$ index.php?route=affiliate-registration [QSA,L]
+RewriteRule ^become-a-vendor/?$ index.php?route=become-a-vendor [QSA,L]
+RewriteRule ^join-community/?$ index.php?route=join-community [QSA,L]
+RewriteRule ^rewards-program/?$ index.php?route=rewards-program [QSA,L]
+RewriteRule ^distribution-partner/?$ index.php?route=distribution-partner [QSA,L]
+RewriteRule ^vendor-resources/?$ index.php?route=vendor-resources [QSA,L]
+RewriteRule ^faqs/?$ index.php?route=faqs [QSA,L]
+RewriteRule ^shipping-delivery/?$ index.php?route=shipping-delivery [QSA,L]
+RewriteRule ^returns-refunds/?$ index.php?route=returns-refunds [QSA,L]
+RewriteRule ^customer-support/?$ index.php?route=customer-support [QSA,L]
+RewriteRule ^careers/?$ index.php?route=careers [QSA,L]
+RewriteRule ^blog-news/?$ index.php?route=blog-news [QSA,L]
+RewriteRule ^gallery/?$ index.php?route=gallery [QSA,L]
+RewriteRule ^albums/?$ index.php?route=albums [QSA,L]
+RewriteRule ^vendor-agreement/?$ index.php?route=vendor-agreement [QSA,L]
+RewriteRule ^partner-agreement/?$ index.php?route=partner-agreement [QSA,L]
+RewriteRule ^cookie-policy/?$ index.php?route=cookie-policy [QSA,L]
+RewriteRule ^packages/?$ index.php?route=packages [QSA,L]
+RewriteRule ^storefront/packages/?$ index.php?route=packages [QSA,L]
+RewriteRule ^knowledge-base/?$ index.php?route=knowledge-base [QSA,L]
+RewriteRule ^manage-store/?$ index.php?route=manage-store [QSA,L]
+RewriteRule ^freshroots/?$ index.php?route=freshroots [QSA,L]
+RewriteRule ^freshroots/join/?$ index.php?route=freshroots/join [QSA,L]
+RewriteRule ^freshroots/privacy-policy/?$ index.php?route=freshroots/privacy-policy [QSA,L]
+RewriteRule ^freshroots/terms/?$ index.php?route=freshroots/terms [QSA,L]
+RewriteRule ^freshroots/legal/?$ index.php?route=freshroots/legal [QSA,L]
+RewriteRule ^farm-users/?$ index.php?route=farm-users [QSA,L]
+RewriteRule ^farm-fresh/?$ index.php?route=farm-fresh [QSA,L]
+RewriteRule ^farm-fresh/privacy-policy/?$ index.php?route=farm-fresh/privacy-policy [QSA,L]
+RewriteRule ^farm-fresh/terms/?$ index.php?route=farm-fresh/terms [QSA,L]
+RewriteRule ^farm-fresh/legal/?$ index.php?route=farm-fresh/legal [QSA,L]
+RewriteRule ^farm-privacy-policy/?$ index.php?route=farm-privacy-policy [QSA,L]
+RewriteRule ^farm-terms/?$ index.php?route=farm-terms [QSA,L]
+RewriteRule ^farm-legal/?$ index.php?route=farm-legal [QSA,L]
+RewriteRule ^farms/?$ index.php?route=farms [QSA,L]
+RewriteRule ^farms-near-me/?$ index.php?route=farms-near-me [QSA,L]
+RewriteRule ^vendors/?$ index.php?route=vendors [QSA,L]
+RewriteRule ^vendors/([a-z0-9-]+)/review/?$ index.php?route=vendor-review&slug=$1 [QSA,L]
+RewriteRule ^vendors/([a-z0-9-]+)/?$ index.php?route=vendors&slug=$1 [QSA,L]
+RewriteRule ^storefront/?$ index.php?route=storefront/index [QSA,L]
+RewriteRule ^storefront/product/?$ index.php?route=storefront/product [QSA,L]
+RewriteRule ^storefront/cart/?$ index.php?route=storefront/cart [QSA,L]
+RewriteRule ^storefront/checkout/?$ index.php?route=storefront/checkout [QSA,L]
+RewriteRule ^storefront/klasha-pay/?$ index.php?route=storefront/klasha-pay [QSA,L]
+RewriteRule ^storefront/order-success/?$ index.php?route=storefront/order-success [QSA,L]
+RewriteRule ^storefront/order-pdf/?$ index.php?route=storefront/order-pdf [QSA,L]
+RewriteRule ^maintenance/?$ maintenance.php [QSA,L]
+RewriteRule ^track-order/?$ index.php?route=track-order [QSA,L]
+RewriteRule ^cart/?$ index.php?route=storefront/cart [QSA,L]
+RewriteRule ^api/cart/add/?$ index.php?route=api/cart/add [QSA,L]
+RewriteRule ^api/admin/product-duplicates/?$ index.php?route=api/admin/product-duplicates [QSA,L]
+RewriteRule ^api/checkout/create/?$ index.php?route=api/checkout/create [QSA,L]
+RewriteRule ^api/checkout/quote/?$ index.php?route=api/checkout/quote [QSA,L]
+RewriteRule ^api/payments/manage-store/?$ index.php?route=api/payments/manage-store [QSA,L]
+RewriteRule ^api/payments/klasha/callback/?$ index.php?route=api/payments/klasha/callback [QSA,L]
+RewriteRule ^api/farm-fresh/membership/?$ index.php?route=api/farm-fresh/membership [QSA,L]
+RewriteRule ^api/storefront/search/?$ index.php?route=api/storefront/search [QSA,L]
+RewriteRule ^api/storefront/reviews/?$ index.php?route=api/storefront/reviews [QSA,L]
+RewriteRule ^api/storefront/category-products/?$ index.php?route=api/storefront/category-products [QSA,L]
+RewriteRule ^api/storefront/product-shipping-quote/?$ index.php?route=api/storefront/product-shipping-quote [QSA,L]
+RewriteRule ^api/mobile(?:/v1)?(?:/(.*))?/?$ index.php?route=api/mobile/v1/$1 [QSA,L]
+RewriteRule ^api/webhooks/stripe/?$ index.php?route=api/webhooks/stripe [QSA,L]
+RewriteRule ^api/webhooks/klasha/?$ index.php?route=api/webhooks/klasha [QSA,L]
+RewriteRule ^product/([a-z0-9-]+)/?$ index.php?route=storefront/product&slug=$1 [QSA,L]
+RewriteRule ^login/?$ login.php [QSA,L]
+RewriteRule ^logout/?$ index.php?route=logout [QSA,L]
+RewriteRule ^register/?$ register.php [QSA,L]
+RewriteRule ^buyer/register/?$ buyer/register.php [QSA,L]
+RewriteRule ^verify-email/?$ verify-email.php [QSA,L]
+RewriteRule ^forgot-password/?$ forgot_password.php [QSA,L]
+RewriteRule ^reset-password/?$ reset_password.php [QSA,L]
+RewriteRule ^onboarding/?$ onboarding.php [QSA,L]
+RewriteRule ^buyer/?$ buyer/index.php [QSA,END]
+RewriteRule ^buyer/(orders|wishlist|addresses|chats|profile)/?$ buyer/$1.php [QSA,END]
+RewriteRule ^vendor/?$ index.php?route=vendor [QSA,L]
+RewriteRule ^vendor/register/?$ index.php?route=vendor/register [QSA,L]
+RewriteRule ^vendor/chat/?$ index.php?route=vendor/chat [QSA,L]
+RewriteRule ^vendor/messages/?$ index.php?route=vendor/chats [QSA,L]
+RewriteRule ^vendor/chats/?$ index.php?route=vendor/chats [QSA,L]
+RewriteRule ^vendor/products/?$ index.php?route=vendor/products [QSA,L]
+RewriteRule ^vendor/product-upload/?$ index.php?route=vendor/product-upload [QSA,L]
+RewriteRule ^(distributors|distributor|distributor/register|dashboard/distributors)/?$ distributor-router.php?route=$1 [QSA,L]
+RewriteRule ^vendor/verification/?$ vendor/verification.php [QSA,L]
+RewriteRule ^affiliate/join/?$ affiliate/join.php [QSA,END]
+RewriteRule ^vendor/(inventory|orders|tracking|customers|reviews|payouts|plans|kyc|settings)/?$ index.php?route=vendor/$1 [QSA,L]
+RewriteRule ^affiliate/?$ affiliate/index.php [QSA,END]
+RewriteRule ^affiliate/(referrals|commissions|payouts|creatives|settings)/?$ affiliate/$1.php [QSA,END]
+RewriteRule ^chat/?$ chat.php [QSA,END]
+RewriteRule ^api/register/vendor-account-check/?$ api/register/vendor-account-check.php [QSA,END]
+
+RewriteRule ^(__MACOSX|app|backup|backups|docs|migrations|storage|web[[:space:]]+version|Archive[[:space:]]+[0-9]+)(/|$) - [F,L,NC]
+RewriteRule (^|/)(backup|backups|dump|dumps|archive|archives)(/|$) - [F,L,NC]
+RewriteRule \.(sql|log|bak|backup|old|orig|save|zip|tar|tgz|gz|bz2|7z|rar|ini|phar|sh|env)$ - [F,L,NC]

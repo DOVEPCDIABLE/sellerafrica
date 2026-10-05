@@ -1,0 +1,14 @@
+{
+    "name": "seller-africa/app",
+    "description": "seller africa market place",
+    "type": "project",
+    "authors": [
+        {
+            "name": "pybexai"
+        }
+    ],
+    "require": {
+        "stripe/stripe-php": "^20.3",
+        "guzzlehttp/guzzle": "^7.12"
+    }
+}
